@@ -1,0 +1,51 @@
+:root {
+    --header-nav-background-color:#E76C1F ;
+}
+
+body{
+    max-width: 1444px;
+    width: 100%;
+    margin: 0;
+}
+
+header nav {
+    max-width: 1440px;
+    height: 128px;
+    opacity: 1;
+    background-color: var(--header-nav-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.logo2 {
+    width: 92px;
+    height: 38px;
+    opacity: 1;
+    gap: 4px;
+    top: 49px;
+    left: 119px;
+
+}
+
+.heroImg {
+    width: 1440px;
+    height: 508px;
+    opacity: 1;
+    top: 59px;
+
+}
+
+
+
+
+
+/* font-family: Palanquin Dark;
+font-weight: 700;
+font-style: Bold;
+font-size: 48px;
+leading-trim: NONE;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: center; */
