@@ -5,37 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestell App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
     <link rel="shortcut icon" href="./assets/icons/Logo 01.png" type="image/x-icon">
     <script src="./script.js"></script>
+    <script src="./scripts/assets.js"></script>
 </head>
-<body>
+<body onload="init()">
     <header>
         <nav>
             <img src="./assets/icons/Logo 02.png" alt="logo bestell App" class="logo2">
-            <div>
-                <p> burger menü</p>
-                
+            <div class="burger-bar" id="burger-bar">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
-           
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Basket</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>    
         </nav>
-        <!-- <div class="heroImg">
-            <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" class="burgerBigLogo">
-            
-        </div>
-        <div>Überschrift mit text
-                <h1>BurgerHause</h1>
-                <img src="./assets/icons/star.png" alt="Stern">
-                <p>4,1</p>
-                <p>(317)</p>
-                <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
-
-            </div> -->
-
     </header>
-    <main>
+    <main> 
+        <!-- <div class="heroImg">
+                        <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" class="burgerBigLogo">
+                        
+                    </div>
+                    <div>Überschrift mit text
+                            <h1>BurgerHause</h1>
+                            <img src="./assets/icons/star.png" alt="Stern">
+                            <p>4,1</p>
+                            <p>(317)</p>
+                            <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+
+        </div> -->
 
     </main>
-
+            
     <footer>
 
     </footer>

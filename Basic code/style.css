@@ -3,20 +3,29 @@
 }
 
 body{
-    max-width: 1444px;
     width: 100%;
     margin: 0;
+}
+header {
+    height: 128px;
+    background-color: var(--header-nav-background-color);
+    width: 100%;
+    margin: 0;
+}
+nav {
+    max-width: 1444px;
+    box-sizing: border-box;
+    height: 128px;
+    background-color: var(--header-nav-background-color);
 }
 
 header nav {
     max-width: 1440px;
     height: 128px;
     opacity: 1;
-    background-color: var(--header-nav-background-color);
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .logo2 {
