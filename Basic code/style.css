@@ -1,50 +1,219 @@
 :root {
     --header-nav-background-color:#E76C1F ;
+    --reviews-background-color: #FACAAC;
+    --fontColor-color: #363534;
+
+
 }
+
 
 body{
     width: 100%;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+
 header {
     height: 128px;
-    background-color: var(--header-nav-background-color);
     width: 100%;
-    margin: 0;
-}
-nav {
-    max-width: 1444px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     box-sizing: border-box;
-    height: 128px;
     background-color: var(--header-nav-background-color);
 }
 
+
 header nav {
+    box-sizing: border-box;
     max-width: 1440px;
-    height: 128px;
+    width: 100%;
     opacity: 1;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
+
 .logo2 {
+    padding-left: 119px;
     width: 92px;
     height: 38px;
     opacity: 1;
     gap: 4px;
-    top: 49px;
-    left: 119px;
-
 }
 
-.heroImg {
-    width: 1440px;
-    height: 508px;
+
+.headerPhoto {
+    height: 439px;
     opacity: 1;
-    top: 59px;
+    background-image: url(./assets/img/header-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-sizing: border-box;
+    max-width: 1440px;
+    width: 100%;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burgerBigLogo {
+width: 200px;
+height: 200px;
+opacity: 1;
+padding-top: 332px;
+left: 620px;
+border-width: 13px;
+
 
 }
+.burgerBigLogo img {
+width: 100%;
+height: 100%;
+opacity: 1;
+border: solid;
+border-radius: 100px;
+border-color:  #FDEADC;
+border-width: 13px;
+}
+
+.headerTitle {
+    width:100%;
+    height: 243px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.headerSlogan {
+    font-family: Palanquin;
+font-weight: 700;
+font-style: Bold;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: center;
+
+}
+
+.title {
+    height: 75px;
+    padding-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+h1 {
+    font-family: Palanquin Dark;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 48px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    
+
+}
+
+.titleColorOrange {
+    color: var(--header-nav-background-color);
+}
+.titleColorBlack {
+    color: var(--fontColor-color);
+;
+}
+
+
+.reviews {
+    width: 110px;
+    height: 32px;
+    opacity: 1;
+    gap: 8px;
+    border-radius: 4px;
+    padding: 4px 5px;
+    margin-left: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--reviews-background-color);
+
+
+}
+.reviews img  {
+
+    width: 24px;
+    height: 23px;
+    angle: 0 deg;
+    opacity: 1;
+    border-radius: 0.5px;
+}
+
+.reviewsRating {
+    width: 25px;
+    height: 24px;
+    angle: 0 deg;
+    opacity: 1;
+    font-family: Palanquin Dark;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: 0%;
+
+}
+
+
+
+
+.reviewsVote {
+width: 35px;
+height: 22px;
+angle: 0 deg;
+opacity: 1;
+font-family: Palanquin;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+leading-trim: NONE;
+line-height: 120%;
+letter-spacing: 0%;
+
+
+}
+
+
+footer {
+    width: 100%;
+    height: 128;
+    angle: 0 deg;
+    opacity: 1;
+    gap: 10px;
+    box-sizing: border-box;
+    padding-top: 32px;
+    padding-right: 514px;
+    padding-bottom: 32px;
+    padding-left: 514px;
+    background-color: var(--header-nav-background-color);
+
+}
+
+
 
 
 
