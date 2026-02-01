@@ -1,0 +1,17 @@
+/* Fonts typ */
+
+
+
+@font-face {
+    font-family:'Palanquin Dark' ;
+    src: url("../assets/font/Palanquin_Dark/PalanquinDark-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Palanquin';
+    src: url("../assets/font/Palanquin/Palanquin-Regular.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}

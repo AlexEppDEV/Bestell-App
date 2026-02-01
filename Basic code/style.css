@@ -2,6 +2,10 @@
     --header-nav-background-color:#E76C1F ;
     --reviews-background-color: #FACAAC;
     --fontColor-color: #363534;
+    --font-weight-normal: 400;
+    --font-weight-fat: 700;
+    --font-family-one:"Palanquin", sans-serif ;
+    --font-family-two:"Palanquin Dark", sans-serif ;
 }
 
 
@@ -15,7 +19,7 @@ body{
 }
 
 
-header {
+.navbarHeader {
     height: 128px;
     width: 100%;
     display: flex;
@@ -27,7 +31,7 @@ header {
 }
 
 
-header nav {
+.navbarHeader nav {
     box-sizing: border-box;
     max-width: 1440px;
     width: 100%;
@@ -39,10 +43,9 @@ header nav {
 
 
 .logo2 {
-    padding-left: 119px;
+    padding-left: 120px;
     width: 92px;
     height: 38px;
-    opacity: 1;
     gap: 4px;
 }
 
@@ -57,7 +60,6 @@ header nav {
     box-sizing: border-box;
     max-width: 1440px;
     width: 100%;
-    opacity: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,23 +67,21 @@ header nav {
 
 
 .burgerBigLogo {
-width: 200px;
-height: 200px;
-opacity: 1;
-padding-top: 332px;
-left: 620px;
-border-width: 13px;
+    width: 200px;
+    height: 200px;
+    padding-top: 332px;
+    /* left: 620px; */
+    border-width: 13px;
 }
 
 
 .burgerBigLogo img {
-width: 100%;
-height: 100%;
-opacity: 1;
-border: solid;
-border-radius: 100px;
-border-color:  #FDEADC;
-border-width: 13px;
+    width: 100%;
+    height: 100%;
+    border: solid;
+    border-radius: 100px;
+    border-color:  #FDEADC;
+    border-width: 13px;
 }
 
 
@@ -96,14 +96,10 @@ border-width: 13px;
 
 
 .headerSlogan {
-font-family: Palanquin;
-font-weight: 700;
-font-style: Bold;
-font-size: 24px;
-leading-trim: NONE;
-line-height: 120%;
-letter-spacing: 0%;
-text-align: center;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-fat);
+    font-size: 24px;
+    text-align: center;
 }
 
 
@@ -117,14 +113,21 @@ text-align: center;
 
 
 h1 {
-    font-family: Palanquin Dark;
-    font-weight: 700;
-    font-style: Bold;
+    font-family: var(--font-family-two);
+    font-weight: var(--font-weight-fat);
     font-size: 48px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: 0%;
     text-align: center;
+}
+
+h2 {
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-fat);
+    font-size: 40px;
+    background-color: var(--header-nav-background-color);
+    height: 60px;
+    margin: 0;
+
+
 }
 
 
@@ -156,50 +159,34 @@ h1 {
 .reviews img  {
     width: 24px;
     height: 23px;
-    angle: 0 deg;
-    opacity: 1;
     border-radius: 0.5px;
 }
 
 
 .reviewsRating {
-    width: 25px;
-    height: 24px;
-    angle: 0 deg;
-    opacity: 1;
-    font-family: Palanquin Dark;
-    font-weight: 400;
-    font-style: Regular;
+    font-family: var(--font-family-two);
+    font-weight: var(--font-weight-normal);
     font-size: 20px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: 0%;
+    margin: 0;
+
 }
 
 
 .reviewsVote {
-width: 35px;
-height: 22px;
-opacity: 1;
-font-family: Palanquin;
-font-weight: 400;
-font-style: Regular;
+font-family: var(--font-family-one);
+font-weight: var(--font-weight-normal);
 font-size: 18px;
-line-height: 120%;
-letter-spacing: 0%;
+margin: 0;
+
 }
 
 
 footer {
     width: 100%;
     height: 128px;
-    opacity: 1;
     gap: 10px;
     box-sizing: border-box;
-    padding-top: 32px;
-    /* padding-right: 514px; */
-    padding-bottom: 32px;
-    /* padding-left: 514px; */
+    padding: 32px 0;
     background-color: var(--header-nav-background-color);
     color: #D9D9D9;
     display: flex;
@@ -211,7 +198,6 @@ footer {
 footer section {
     width: 530px;
     height: 24px; 
-    opacity: 1;
     gap: 72px;
     max-width: 1440px;
     width: 100%;
@@ -222,9 +208,8 @@ footer section {
 
 
 footer p {
-font-family: Palanquin;
-font-weight: 400;
-font-style: Regular;
+font-family: var(--font-family-one);
+font-weight: var(--font-weight-normal);
 font-size: 18px;
 }
 
@@ -242,7 +227,51 @@ align-items: center;
 .copyrightImg {
     width: 24px;
     height: 24px;
-    opacity: 1;
 }
 
 
+/* main */
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+.sectionCourt {
+    /* max-width: 1440px; */
+    width: 100%;
+    height: auto;
+}
+
+.sectionHeader {
+    
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: var(--header-nav-background-color);
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sectionTitle {
+    max-width: 1440px;
+    width: 100%;
+    padding-left: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.sectionCourtLogo {
+    width: 90px;
+    height: 90px;
+}
+
+.sectionCourtLogo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+}
