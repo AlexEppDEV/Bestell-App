@@ -6,6 +6,7 @@
     --font-weight-fat: 700;
     --font-family-one:"Palanquin", sans-serif ;
     --font-family-two:"Palanquin Dark", sans-serif ;
+    --court-background-color: #FDEADC;
 }
 
 
@@ -70,7 +71,6 @@ body{
     width: 200px;
     height: 200px;
     padding-top: 332px;
-    /* left: 620px; */
     border-width: 13px;
 }
 
@@ -130,6 +130,24 @@ h2 {
 
 }
 
+h3 {
+    padding-top: 10px;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-fat);
+    font-size: 24px;
+    margin: 0;
+
+
+}
+
+p {
+    font-size: 16px;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-normal);
+    margin: 0;
+    gap: 5px;
+
+}
 
 .titleColorOrange {
     color: var(--header-nav-background-color);
@@ -173,10 +191,10 @@ h2 {
 
 
 .reviewsVote {
-font-family: var(--font-family-one);
-font-weight: var(--font-weight-normal);
-font-size: 18px;
-margin: 0;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-normal);
+    font-size: 18px;
+    margin: 0;
 
 }
 
@@ -208,19 +226,19 @@ footer section {
 
 
 footer p {
-font-family: var(--font-family-one);
-font-weight: var(--font-weight-normal);
-font-size: 18px;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-normal);
+    font-size: 18px;
 }
 
 
 .copyright {
-width: 180px;
-height: 24px;
-gap: 4px;
-display: flex;
-justify-content: center;
-align-items: center;
+    width: 180px;
+    height: 24px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -238,20 +256,17 @@ main {
 }
 
 .sectionCourt {
-    /* max-width: 1440px; */
     width: 100%;
     height: auto;
 }
 
 .sectionHeader {
-    
     width: 100%;
     height: 60px;
     display: flex;
     background-color: var(--header-nav-background-color);
     justify-content: center;
     align-items: center;
-
 }
 
 .sectionTitle {
@@ -261,7 +276,6 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .sectionCourtLogo {
@@ -274,4 +288,76 @@ main {
     height: 100%;
     object-fit: contain;
     margin: 0;
+}
+
+
+/* court */
+
+.BurgerSandwiches {
+    padding: 16px 0 16px 120px;
+}
+
+.court {
+    width: 720px;
+    height: 140px;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--court-background-color);
+
+}
+
+.courtImg {
+    width: 210px;
+    height: 120px;
+    border-radius: 12px;
+    padding-right: 10px;
+    flex-shrink: 0;
+}
+
+
+.courtImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0;
+}
+
+.courtTitle {
+    height: 140px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+
+.buttonPrice {
+    width: 120px;
+    height: 120px;
+    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+.courtPrice {
+    width: 100%;
+
+}
+
+
+.courtButton {
+    width: 100%;
+    text-align: end;
 }
