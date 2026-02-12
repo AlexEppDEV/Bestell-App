@@ -338,6 +338,11 @@ main {
 
 }
 
+.courtTitle p {
+    line-height: 1.1;
+
+}
+
 
 .buttonPrice {
     width: 120px;

@@ -2,15 +2,73 @@
 
 
 function init() {
-    let indexCategories = ' ';
-    allRender(indexCategories);
+    // categoriesTepmlate();
+    categoriesTepmlate();
 }
 
-function allRender(indexCategories) {
-    // 1. Wir holen uns die Referenz zum HTML-Element
-    foodTepmlate(indexCategories);
-    // foodRender();
+
+
+
+
+// ======================================================================================
+
+function categoriesTepmlate(){
+    let categoriesRef = ' ';
+    let menuRef = ' ';
+        for (let indexCategories = 0; indexCategories < foodMenu.length; indexCategories++) {
+        categoriesRef+= `<section class="sectionCourt">
+                <header class="sectionHeader">
+                    <div class="sectionTitle">
+                        <div class="sectionCourtLogo">
+                            <img src="./assets/icons/${foodMenu[indexCategories].categoriesImg}.png" alt="burger" >
+                        </div>
+                        <h2>${foodMenu[indexCategories].categories}</h2>
+                    </div>
+                </header>
+                <div id="newMenu${indexCategories}">
+                    </div>
+                </section>`;
+
+            for (let indexMenu = 0; indexMenu < foodMenu[indexCategories].menu.length; indexMenu++) {
+                menuRef+= `
+                <div class="BurgerSandwiches">
+                    <div class="court" id="court">
+                        <div class="courtImg">
+                            <img src="./assets/img/${foodMenu[indexCategories].menu[indexMenu].menuImg}.jpg" alt="Veggie mushroom black burger">
+                        </div>
+                        <div class="courtTitle">
+                            <h3>${foodMenu[indexCategories].menu[indexMenu].name}</h3>
+                            <p>${foodMenu[indexCategories].menu[indexMenu].ingredients}</p>
+                        </div>
+                        <div class="buttonPrice">
+                            <p id="courtPrice" class="courtPrice">${foodMenu[indexCategories].menu[indexMenu].price}€</p>
+                            <div class="courtButton">
+                                <button type="button" id="addBasket" class="buttenAddBasket">Add to basket </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            categoriesRef+= menuRef;
+            menuRef = ' ';
+         }
+         document.getElementById('newCategories').innerHTML = categoriesRef;
 }
+
+
+
+// ======================================================================================
+
+
+
+
+function allRender() {
+    // 1. Wir holen uns die Referenz zum HTML-Element
+    categoriesTepmlate();
+    // foodTepmlate();
+
+}
+
 function foodRender() {
 let refCategories = ' ';
 let indexCategories = ' ';
@@ -31,71 +89,6 @@ for (let indexCom = 0; indexCom < foodMenu.length; indexCom++) {
     refCategories = ' ';
 }
 }
-
-function foodTepmlate(indexCategories){
-  let categoriesRef = ' ';
-    let menuRef = ' ';
-for (let indexCategories = 0; indexCategories < foodMenu.length; indexCategories++) {
-  categoriesRef+= `<section class="sectionCourt">
-          <header class="sectionHeader">
-            <div class="sectionTitle">
-                <div class="sectionCourtLogo">
-                    <img src="./assets/icons/${foodMenu[indexCategories].categoriesImg}.png" alt="burger" >
-                </div>
-                <h2>${foodMenu[indexCategories].categories}</h2>
-            </div>
-          </header>
-          <div id="newMenu">
-
-            </div>
-        </section>`;
-       document.getElementById('newCategories').innerHTML = categoriesRef;
-    
-
-
-    //    console.log(foodMenu[indexCategories].menu[0].menuImg);
-
-
-       
-
-for (let indexMenu = 0; indexMenu < foodMenu[indexCategories].menu.length; indexMenu++) {
-  menuRef+= `
-          <div class="BurgerSandwiches">
-            <div class="court" id="court">
-                <div class="courtImg">
-                    <img src="./assets/img/${foodMenu[indexCategories].menu[indexMenu].menuImg}.jpg" alt="Veggie mushroom black burger">
-                </div>
-                <div class="courtTitle">
-                    <h3>Veggie mushroom black burger</h3>
-                    <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
-
-                </div>
-                <div class="buttonPrice">
-                    <p id="courtPrice" class="courtPrice"> 13,90€</p>
-                    <div class="courtButton">
-                        <button id="addBasket" class="buttenAddBasket">Add to basket </button>
-                    </div>
-
-                </div>
-
-            </div>
-          </div>
-
-        </section>`;
-       document.getElementById('newMenu').innerHTML = menuRef;
-    
-
-
-    //    console.log(foodMenu[indexMenu].menu[0].menuImg);
-}
-
-
-}
-
-}
-
-
-// ======================================================================================
 // vorlage
 
 function foodRender1() {
@@ -119,7 +112,7 @@ for (let indexCom = 0; indexCom < books.length; indexCom++) {
 }
 }
 
-function foodTepmlate1(indexBooks){
+function foodTepmlate9(indexBooks){
   let bookRef = ' ';
 for (let indexBooks = 0; indexBooks < books.length; indexBooks++) {
   bookRef+= `<article class="book">

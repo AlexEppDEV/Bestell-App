@@ -71,3 +71,96 @@
     border-radius: 20px;
     color: #363534;
 }
+
+
+.buttonPrice {
+    width: 120px;
+    height: 120px;
+    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.buttonPrice button {
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease,
+        box-shadow 0.3s ease;
+
+
+}
+
+.buttonPrice button:hover {
+    background-color: #f7b185;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Klick Effekt */
+.buttonPrice button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   DIALOG TEMPLATE
+   ========================= */
+
+/* Grundzustand */
+dialog {
+    width: 50vw; /* 50% der Viewport-Breite */
+    height: 75vh; /* 75% der Viewport-Höhe */
+
+    background-color: rgb(148, 137, 137); /* Hintergrundfarbe */
+
+    box-sizing: border-box; 
+    /* Padding & Border werden in Breite/Höhe eingerechnet */
+
+    border: none; /* entfernt Standard-Browser-Rahmen */
+    border-radius: 5%; /* abgerundete Ecken */
+
+    transform: translateY(-20px); 
+    /* Startposition leicht nach oben verschoben */
+
+    opacity: 0; 
+    /* unsichtbar im Startzustand */
+
+    transition: all 0.3s ease; 
+    /* weiche Animation für Öffnen */
+}
+
+
+/* Aktiver Zustand */
+dialog.opened {
+    border: 5px solid rgba(13, 87, 31, 0.278); 
+    /* Rahmen wenn Dialog aktiv ist */
+
+    transform: translateY(0); 
+    /* fährt an normale Position */
+
+    opacity: 1; 
+    /* wird sichtbar */
+}
+
+
+/* Hintergrund (Overlay) */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); 
+    /* dunkler Overlay-Hintergrund */
+
+    opacity: 0; 
+    /* Start: unsichtbar */
+
+    transition: opacity 0.3s ease; 
+    /* weiche Einblendung */
+}
+
+
+/* Aktiver Hintergrund */
+dialog.opened::backdrop {
+    opacity: 1; 
+    /* Overlay wird sichtbar */
+}
