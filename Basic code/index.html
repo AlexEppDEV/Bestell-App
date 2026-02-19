@@ -32,9 +32,9 @@
         </nav>
     </header>
     <section class="headerPhoto">
-         <div class="burgerBigLogo">
-                <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" >
-            </div>
+        <div class="burgerBigLogo">
+            <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" >
+        </div>
     </section>
 
     <section class="headerTitle">
@@ -50,28 +50,29 @@
     </section>
 
     <main> 
-        <section id="newCategories">
-
-        </section>
-
-        <section id="BasketTemplace">
-           
-                <section class="basket"> 
-                    <header class="basketHeader">
-                        <h2>Your Basket</h2>
-                        <button onclick="basketClose()" class="closeButton" tabindex="0">X</button>
-                    </header>
-                    <section class="">
-                        <p>Nothing here yet. Go ahead and choose something delicious!</p>
-                        <img src="#" alt="einkaufswagen">
-                        <div id="basketOrders" class=""></div>
-                    </section>
-                    <footer class="basketFooter">
-                        <h3></h3>
-                    </footer>
-                </section>
+             <section id="newCategories" class="newCategories">
                
-        </section>
+            </section>
+            <section id="BasketTemplace"  class="basketSection">  
+                    <section class="basket"> 
+                        <header class="basketHeader">
+                            <div class="buttonBar">
+                                <button onclick="basketClose()" class="closeButton" tabindex="0">X</button>
+                            </div>
+                            <h2>Your Basket</h2>
+                        </header>
+                        <section class="basketContents">
+                            <p>Nothing here yet. Go ahead and choose something delicious!</p>
+                            <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
+                            <div id="basketOrders" class="">
+
+                            </div>
+                        </section>
+                    </section>    
+                </section>
+           
+        
+        
     </main>
             
     <footer>

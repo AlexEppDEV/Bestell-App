@@ -32,18 +32,21 @@ function categoriesTepmlate(){
             for (let indexMenu = 0; indexMenu < foodMenu[indexCategories].menu.length; indexMenu++) {
                 menuRef+= `
                 <div class="BurgerSandwiches">
-                    <div class="court" id="court">
-                        <div class="courtImg">
-                            <img src="./assets/img/${foodMenu[indexCategories].menu[indexMenu].menuImg}.jpg" alt="Veggie mushroom black burger">
-                        </div>
-                        <div class="courtTitle">
-                            <h3>${foodMenu[indexCategories].menu[indexMenu].name}</h3>
-                            <p>${foodMenu[indexCategories].menu[indexMenu].ingredients}</p>
-                        </div>
-                        <div class="buttonPrice">
-                            <p id="courtPrice" class="courtPrice">${foodMenu[indexCategories].menu[indexMenu].price}€</p>
-                            <div class="courtButton">
-                                <button type="button" id="addBasket" class="buttenAddBasket">Add to basket </button>
+                    <div class="newMenu">
+
+                        <div class="court" id="court">
+                            <div class="courtImg">
+                                <img src="./assets/img/${foodMenu[indexCategories].menu[indexMenu].menuImg}.jpg" alt="Veggie mushroom black burger">
+                            </div>
+                            <div class="courtTitle">
+                                <h3>${foodMenu[indexCategories].menu[indexMenu].name}</h3>
+                                <p>${foodMenu[indexCategories].menu[indexMenu].ingredients}</p>
+                            </div>
+                            <div class="buttonPrice">
+                                <p id="courtPrice" class="courtPrice">${foodMenu[indexCategories].menu[indexMenu].price}€</p>
+                                <div class="courtButton">
+                                    <button type="button" id="addBasket" class="buttenAddBasket">Add to basket </button>
+                                </div>
                             </div>
                         </div>
                     </div>

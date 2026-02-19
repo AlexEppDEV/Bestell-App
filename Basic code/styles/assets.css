@@ -1,10 +1,5 @@
-
-
 /* Nav Bar */
-
-
-
-/* Das Burger-Icon ist JETZT IMMER sichtbar */
+/* Das Burger-Icon sichtbar */
 .burger-bar {
     padding-right: 70px;
     width: 60px;
@@ -63,6 +58,134 @@
 }
 
 
+/* basket */
+.buttonBar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+}
+
+
+.basketSection {
+/* right: -100%; Komplett aus dem Bild geschoben */
+     grid-column: 2; 
+    /* rechte Spalte */
+    grid-row: 1; 
+    /* gleiche Reihe wie Menü -> Overlap möglich */
+    
+    position: sticky; 
+    /* klebt beim Scrollen */
+    top: 0; 
+    /* klebt am oberen Rand innerhalb von main/Scroll-Kontext */
+
+    z-index: 1; 
+    /* liegt über dem Menü */
+
+    justify-self: end; 
+    /* am rechten Rand der Spalte ausrichten */
+}
+
+
+.basket {
+    width: 100%; /* Breite des Menüs */
+    height: 60vh; /* Volle Bildschirmhöhe */
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    list-style: none;
+    transition: 0.4s ease-in-out; /* Sanftes Gleiten */
+    margin: 0;
+    box-sizing: border-box;
+    padding: 16px 16px;
+}
+
+
+.basketHeader {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+.basketContents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+.basketHeader h2 {
+    font-size: 36px;
+    background-color: #444;
+    height: auto;  
+}
+
+
+.closeButton {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.closeButton:hover {
+    background-color: #f7b185;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Klick Effekt */
+.closeButton:active {
+    transform: scale(0.96);
+}
+
+
+.basketContents img {
+    height: 130px;
+    width: 130px;
+}
+
+
+.basketContents p {
+    text-align: center;
+    padding-bottom: 36px;
+}
+
+
+/* Wenn 'active' per JS hinzugefügt wird, gleitet es rein */
+.nav-links.active {
+    right: 0;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
 .buttenAddBasket {
     font-size: 16px;
     border: 0;
@@ -84,83 +207,23 @@
     flex-shrink: 0;
 }
 
+
 .buttonPrice button {
     cursor: pointer;
     transition:
         background-color 0.3s ease,
         transform 0.1s ease,
         box-shadow 0.3s ease;
-
-
 }
+
 
 .buttonPrice button:hover {
     background-color: #f7b185;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+
 /* Klick Effekt */
 .buttonPrice button:active {
     transform: scale(0.96);
-}
-
-
-/* =========================
-   DIALOG TEMPLATE
-   ========================= */
-
-/* Grundzustand */
-dialog {
-    width: 50vw; /* 50% der Viewport-Breite */
-    height: 75vh; /* 75% der Viewport-Höhe */
-
-    background-color: rgb(148, 137, 137); /* Hintergrundfarbe */
-
-    box-sizing: border-box; 
-    /* Padding & Border werden in Breite/Höhe eingerechnet */
-
-    border: none; /* entfernt Standard-Browser-Rahmen */
-    border-radius: 5%; /* abgerundete Ecken */
-
-    transform: translateY(-20px); 
-    /* Startposition leicht nach oben verschoben */
-
-    opacity: 0; 
-    /* unsichtbar im Startzustand */
-
-    transition: all 0.3s ease; 
-    /* weiche Animation für Öffnen */
-}
-
-
-/* Aktiver Zustand */
-dialog.opened {
-    border: 5px solid rgba(13, 87, 31, 0.278); 
-    /* Rahmen wenn Dialog aktiv ist */
-
-    transform: translateY(0); 
-    /* fährt an normale Position */
-
-    opacity: 1; 
-    /* wird sichtbar */
-}
-
-
-/* Hintergrund (Overlay) */
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5); 
-    /* dunkler Overlay-Hintergrund */
-
-    opacity: 0; 
-    /* Start: unsichtbar */
-
-    transition: opacity 0.3s ease; 
-    /* weiche Einblendung */
-}
-
-
-/* Aktiver Hintergrund */
-dialog.opened::backdrop {
-    opacity: 1; 
-    /* Overlay wird sichtbar */
 }

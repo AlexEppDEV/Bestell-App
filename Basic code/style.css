@@ -12,6 +12,7 @@
 
 body{
     width: 100%;
+    
     margin: 0;
     display: flex;
     justify-content: center;
@@ -126,9 +127,8 @@ h2 {
     background-color: var(--header-nav-background-color);
     height: 60px;
     margin: 0;
-
-
 }
+
 
 h3 {
     padding-top: 10px;
@@ -136,9 +136,8 @@ h3 {
     font-weight: var(--font-weight-fat);
     font-size: 24px;
     margin: 0;
-
-
 }
+
 
 p {
     font-size: 16px;
@@ -146,8 +145,8 @@ p {
     font-weight: var(--font-weight-normal);
     margin: 0;
     gap: 5px;
-
 }
+
 
 .titleColorOrange {
     color: var(--header-nav-background-color);
@@ -186,7 +185,6 @@ p {
     font-weight: var(--font-weight-normal);
     font-size: 20px;
     margin: 0;
-
 }
 
 
@@ -195,7 +193,6 @@ p {
     font-weight: var(--font-weight-normal);
     font-size: 18px;
     margin: 0;
-
 }
 
 
@@ -251,23 +248,44 @@ footer p {
 /* main */
 
 main {
-    width: 100%;
-    height: auto;
+    width: 100%; /* main nimmt volle Breite */
+    display: grid; /* aktiviert Grid Layout */
+    grid-template-columns: 1fr 25vw; 
+    /* 2 Spalten:
+       - 1fr = Menü flexibel
+       - 450px = Warenkorb-Spalte fest (anpassen wie du willst)
+    */
+    align-items: start; /* Items oben ausrichten (wichtig für sticky) */
 }
+
+
+.newCategories {
+    width: 100%;
+    grid-column: 1 / -1; 
+    /* spannt von erster bis letzter Spalte -> volle Breite */
+    grid-row: 1; 
+    /* liegt in Reihe 1 (gleich wie Warenkorb, damit Überlappung möglich ist) */
+
+}
+
 
 .sectionCourt {
     width: 100%;
     height: auto;
+    flex-grow: 1;
 }
+
 
 .sectionHeader {
     width: 100%;
     height: 60px;
     display: flex;
-    background-color: var(--header-nav-background-color);
+    
     justify-content: center;
     align-items: center;
+    background-color: var(--header-nav-background-color);
 }
+
 
 .sectionTitle {
     max-width: 1440px;
@@ -278,10 +296,12 @@ main {
     align-items: center;
 }
 
+
 .sectionCourtLogo {
     width: 90px;
     height: 90px;
 }
+
 
 .sectionCourtLogo img{
     width: 100%;
@@ -292,13 +312,27 @@ main {
 
 
 /* court */
-
 .BurgerSandwiches {
-    padding: 16px 0 16px 120px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newMenu {
+    width: 100%;
+    max-width: 1440px;
+    padding: 16px 30vw 16px 120px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .court {
-    width: 720px;
+    width: 100%;
     height: 140px;
     border-radius: 12px;
     padding: 10px;
@@ -307,8 +341,8 @@ main {
     justify-content: flex-start;
     align-items: center;
     background-color: var(--court-background-color);
-
 }
+
 
 .courtImg {
     width: 210px;
@@ -327,6 +361,7 @@ main {
     margin: 0;
 }
 
+
 .courtTitle {
     height: 140px;
     width: 100%;
@@ -335,12 +370,11 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-
 }
+
 
 .courtTitle p {
     line-height: 1.1;
-
 }
 
 
@@ -358,18 +392,10 @@ main {
 
 .courtPrice {
     width: 100%;
-
 }
 
 
 .courtButton {
     width: 100%;
     text-align: end;
-}
-
-/* basked */
-
-.basket {
-    display: none;
-
 }
