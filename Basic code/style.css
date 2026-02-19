@@ -366,3 +366,10 @@ main {
     width: 100%;
     text-align: end;
 }
+
+/* basked */
+
+.basket {
+    display: none;
+
+}
