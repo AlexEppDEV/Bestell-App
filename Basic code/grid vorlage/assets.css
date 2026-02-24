@@ -68,12 +68,22 @@
 
 
 .basketSection {
-    width: 320px;
+/* right: -100%; Komplett aus dem Bild geschoben */
+     grid-column: 2; 
+    /* rechte Spalte */
+    grid-row: 1; 
+    /* gleiche Reihe wie Menü -> Overlap möglich */
+    
+    position: sticky; 
+    /* klebt beim Scrollen */
+    top: 0; 
+    /* klebt am oberen Rand innerhalb von main/Scroll-Kontext */
 
-    height: 100%;
-    position: absolute;
     z-index: 1; 
-    /* right: -100%; Komplett aus dem Bild geschoben */
+    /* liegt über dem Menü */
+
+    justify-self: end; 
+    /* am rechten Rand der Spalte ausrichten */
 }
 
 
@@ -93,16 +103,7 @@
     margin: 0;
     box-sizing: border-box;
     padding: 16px 16px;
-    
-    /* neu */
-    position: sticky;
-    top: 0; 
-    /* klebt am oberen Rand innerhalb von main/Scroll-Kontext */
-     justify-self: end; 
-    /* am rechten Rand der Spalte ausrichten */
 }
-
-
 
 
 .basketHeader {
@@ -185,7 +186,7 @@
 }
 
 
-.buttonAddBasket {
+.buttenAddBasket {
     font-size: 16px;
     border: 0;
     padding: 5px 10px;

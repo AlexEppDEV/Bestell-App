@@ -118,7 +118,6 @@ h1 {
     font-weight: var(--font-weight-fat);
     font-size: 48px;
     text-align: center;
-    margin: 0;
 }
 
 h2 {
@@ -250,24 +249,25 @@ footer p {
 
 main {
     width: 100%; 
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    /* neu */
-    position: relative;
-    z-index: 0;
-
+    display: grid; /* aktiviert Grid Layout */
+    grid-template-columns: 1fr 25vw; 
+    /* 2 Spalten:
+       - 1fr = Menü flexibel
+       - 450px = Warenkorb-Spalte fest 
+    */
+    align-items: start; /* Items oben ausrichten (wichtig für sticky) */
 }
 
 
 .newCategories {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    grid-column: 1 / 2; 
+    /* spannt von erster bis letzter Spalte -> volle Breite */
+    grid-row: 1; 
+    /* liegt in Reihe 1 (gleich wie Warenkorb, damit Überlappung möglich ist) */
 
+    /* neu */
+    display: contents;
 
 }
 
@@ -275,6 +275,10 @@ main {
 .sectionCourt {
     width: 100%;
     height: auto;
+    flex-grow: 1;
+    
+    /* neu */
+    display: contents;
 
 }
 
@@ -287,6 +291,12 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--header-nav-background-color);
+
+    /* NEU: Der Header spannt sich jetzt über beide Spalten (1 bis 3) */
+    grid-column: 1 / 3; 
+    
+    /* Damit er unter dem Warenkorb bleibt, falls dieser transparent wäre */
+    z-index: 0;
 
 }
 
@@ -324,6 +334,8 @@ main {
     justify-content: center;
     align-items: center;
 
+    grid-column: 1;
+
 }
 
 
@@ -332,17 +344,16 @@ main {
 .newMenu {
     width: 100%;
     
-    padding: 16px 0 16px 120px;
+    padding: 16px 120px 16px 120px;
     box-sizing: border-box;
     display: flex;
     justify-content: left;
     align-items: center;
 
-
 }
 
 .court {
-    width: 750px;
+    width: 100%;
     height: 140px;
     border-radius: 12px;
     padding: 10px;

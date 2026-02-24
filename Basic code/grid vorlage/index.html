@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestell App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/font-face.css">
+    <link rel="shortcut icon" href="./assets/icons/Logo 01.png" type="image/x-icon">
+    <link rel="stylesheet" href="">
+    <script src="./scripts/foodMenu.js"></script>
+    <script src="./script.js"></script>
+    <script src="./scripts/assets.js"></script>
+</head>
+<body onload="init()">
+    <header class="navbarHeader">
+        
+        <nav>
+            <img src="./assets/icons/Logo 02.png" alt="logo bestell App" class="logo2">   
+            <div class="burger-bar" id="burger-bar">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Basket</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>    
+        </nav>
+    </header>
+    <section class="headerPhoto">
+        <div class="burgerBigLogo">
+            <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" >
+        </div>
+    </section>
+
+    <section class="headerTitle">
+        <div class="title">
+            <h1><span class="titleColorOrange">Burger</span><span class="titleColorBlack">Hause</span></h1>
+            <div class="reviews">
+                <img src="./assets/icons/star.png" alt="Stern">
+                <p class="reviewsRating">4,1</p>
+                <p class="reviewsVote">(317)</p> 
+            </div>
+        </div>
+        <p class="headerSlogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+    </section>
+
+    <main> 
+             <section id="newCategories" class="newCategories">
+               
+            </section>
+            <section id="BasketTemplace"  class="basketSection">  
+                    <section class="basket"> 
+                        <header class="basketHeader">
+                            <div class="buttonBar">
+                                <button onclick="basketClose()" class="closeButton" tabindex="0">X</button>
+                            </div>
+                            <h2>Your Basket</h2>
+                        </header>
+                        <section class="basketContents">
+                            <p>Nothing here yet. Go ahead and choose something delicious!</p>
+                            <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
+                            <div id="basketOrders" class="">
+
+                            </div>
+                        </section>
+                    </section>    
+                </section>
+           
+        
+        
+    </main>
+            
+    <footer>
+        <section>
+            <div class="copyright">
+                <img src="./assets/icons/copyright.png" alt="copyright" class="copyrightImg">
+                <p>2025 BurgerHause</p>
+            </div>
+            <p>Imprint</p>
+            <p>Cookie Preferences</p>
+        </section>
+    </footer>
+    
+</body>
+</html>

@@ -45,7 +45,7 @@ function categoriesTepmlate(){
                             <div class="buttonPrice">
                                 <p id="courtPrice" class="courtPrice">${foodMenu[indexCategories].menu[indexMenu].price}€</p>
                                 <div class="courtButton">
-                                    <button type="button" id="addBasket" class="buttenAddBasket">Add to basket </button>
+                                    <button type="button" id="addBasket" class="buttonAddBasket">Add to basket </button>
                                 </div>
                             </div>
                         </div>
