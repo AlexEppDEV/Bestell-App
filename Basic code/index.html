@@ -6,6 +6,7 @@
     <title>Bestell App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./styles/font-face.css">
     <link rel="shortcut icon" href="./assets/icons/Logo 01.png" type="image/x-icon">
     <link rel="stylesheet" href="">
@@ -53,17 +54,37 @@
              <section id="newCategories" class="newCategories">
                
             </section>
+
+
             <section id="BasketTemplaceID"  class="basketSection">  
                     <section class="basket" id="basket"> 
                         <header class="basketHeader">
                             <div class="buttonBar">
-                                <button onclick="basketClose()" id="basketClose" class="closeButton" tabindex="0">X</button>
+                                <button id="basketClose" class="closeButton" tabindex="0">X</button>
                             </div>
                             <h2>Your Basket</h2>
                         </header>
-                        <section class="basketContents">
-                            <p>Nothing here yet. Go ahead and choose something delicious!</p>
-                            <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
+                        <section class="basketContents" id="basketFood">
+                            <!-- <section class="basketMenu">
+                                <header class="basketFoodName">
+                                    <p>preis</p>
+                                </header>
+                                <main class="basketFoodPrice">
+                                    <div class="basketButtonBar">
+                                        <img src="./assets/icons/trashcan.png" alt="">
+                                        <button type="button" class="moreMenu">1+</button>
+                                    </div>
+                                    <p>preis</p>
+
+                                </main>
+
+                            </section> -->
+
+                            <div id="basketBackgroundID" class="basketBackground">
+                                <p>Nothing here yet. Go ahead and choose something delicious!</p>
+                                <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
+                            </div>
+                            
                             <div id="basketOrders" class="">
 
                             </div>
@@ -76,6 +97,7 @@
     </main>
             
     <footer>
+        
         <section>
             <div class="copyright">
                 <img src="./assets/icons/copyright.png" alt="copyright" class="copyrightImg">
