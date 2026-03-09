@@ -1,10 +1,126 @@
  
+.basketSection {
+    width: 320px;
+    height: 100%;
+    position: absolute;
+    z-index: 1; 
+    flex-grow: 1;
+    /* Komplett aus dem Bild geschoben */
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.basketSection.open {
+    transform: translateX(0);
+}
+
+
+.basket {
+    width: 100%; 
+    height: 700px; 
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    list-style: none;
+    transition: 0.4s ease-in-out; /* Sanftes Gleiten */
+    margin: 0;
+    box-sizing: border-box;
+    padding: 16px 16px;
+
+    /* neu */
+    position: sticky;
+    top: 0; 
+    /* klebt am oberen Rand innerhalb von main/Scroll-Kontext */
+     justify-self: end; 
+    /* am rechten Rand der Spalte ausrichten */
+}
+
+
+.basketHeader {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+.basketContents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+
+.basketContents.off {
+display: none;
+}
+
+
+.basketHeader h2 {
+    font-size: 36px;
+    background-color: #444;
+    height: auto; 
+    margin: 0; 
+}
+
+
+.closeButton {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.closeButton:hover {
+    background-color: #f7b185;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Klick Effekt */
+.closeButton:active {
+    transform: scale(0.96);
+}
+
+
+.basketContents img {
+    height: 130px;
+    width: 130px;
+}
+
+
+.basketContents p {
+    text-align: center;
+    padding-bottom: 36px;
+}
+
 
 .basketMenu {
     width: 100%;
     height: 100px;
-    border-radius: 20px;
-    
+    border-radius: 20px;   
     background-color: var(--reviews-background-color);
     box-sizing: border-box;
     padding: 10px 20px;
@@ -12,9 +128,10 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    color: black;
-
+    color: black; 
+    gap: 10px;
 }
+
 
 .basketMenu p {
     padding: 0;
@@ -22,16 +139,14 @@
     font-size: 16px;
 }
 
-.basketFoodName {
-    
+
+.basketFoodName { 
     width: 100%;
     display: flex;
     justify-content: left;
     align-items: center;
-    /* box-sizing: border-box; */
-    /* padding: 10px 20px 20px; */
-
 }
+
 
 .basketFoodPrice {
     width: 100%;
@@ -41,28 +156,28 @@
     align-items: center;
 }
 
+
 .basketButtonBar {
     width: 50px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
+
 
 .basketButtonBar img {
 width: 24px;
 height: 24px;
-
 }
+
 
 .moreMenu {
     background-color: var(--reviews-background-color);
 }
 
-/* button bar for basket */
 
+/* button bar for basket */
 .basketButtonBar button {
     height: 30px;
     width: 25px;
@@ -87,10 +202,78 @@ height: 24px;
     transform: scale(0.96);
 }
 
+
 .basketBackground {
     text-align: center;
 }
 
+
 .basketBackground.off {
     display: none;
+}
+
+
+/* footer basket */
+.basketFooter {
+    width: 320px;
+    height: 240px;
+    padding: 16px;
+    background-color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+
+table {
+    width: 100%;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+
+tfoot {
+    border-top: 3px solid white;  
+}
+
+
+tr {
+    width: 100%;
+}
+
+
+th {
+    text-align: left;
+    padding: 5px 10px; 
+}
+
+
+td {
+    text-align: right;
+    padding: 5px 10px;
+}
+
+
+.basketFooter button {
+    height: 60px;
+    width: 288px;
+    font-size: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 60px;
+    cursor: pointer;
+    background-color: #f7b185;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.basketFooter button:hover { 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }

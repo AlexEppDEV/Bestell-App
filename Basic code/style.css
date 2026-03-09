@@ -12,7 +12,6 @@
 
 body{
     width: 100%;
-    
     margin: 0;
     display: flex;
     justify-content: center;
@@ -121,6 +120,7 @@ h1 {
     text-align: center;
     margin: 0;
 }
+
 
 h2 {
     font-family: var(--font-family-one);
@@ -248,17 +248,14 @@ footer p {
 
 
 /* main */
-
 main {
     width: 100%; 
     height: auto;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    
     position: relative;
     z-index: 0;
-
 }
 
 
@@ -268,8 +265,6 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-
-
 }
 
 
@@ -277,7 +272,6 @@ main {
     width: 100%;
     height: auto;
     box-sizing: border-box;
-
 }
 
 
@@ -285,11 +279,9 @@ main {
     width: 100%;
     height: 60px;
     display: flex;
-    
     justify-content: center;
     align-items: center;
     background-color: var(--header-nav-background-color);
-
 }
 
 
@@ -320,14 +312,10 @@ main {
 
 /* court */
 .BurgerSandwiches {
-
     width: calc(100% - 340px);
     max-width: 1440px ;
     box-sizing: border-box;
-
 }
-
-
 
 
 .newMenu {
@@ -338,6 +326,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 
 .court {
     width: 750px;
