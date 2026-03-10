@@ -2,16 +2,15 @@
 
 
 function init() {
-    // categoriesTepmlate();
+    renderCategories();
+    
+};
+
+function renderCategories() {
     categoriesTepmlate();
-}
-
-
-
-
+};
 
 // ======================================================================================
-
 function categoriesTepmlate(){
     let categoriesRef = ' ';
     let menuRef = ' ';
@@ -45,7 +44,7 @@ function categoriesTepmlate(){
                             <div class="buttonPrice">
                                 <p class="courtPrice">${foodMenu[indexCategories].menu[indexMenu].price}€</p>
                                 <div class="courtButton">
-                                    <button type="button" onclick="addBasket(${indexCategories}, ${indexMenu}, this)" class="buttonAddBasket">Add to basket</button>
+                                    <button type="button" onclick="addBasket(${indexCategories}, ${indexMenu}, this)" id="addBasketID${indexCategories}-${indexMenu}" class="buttonAddBasket">Add to basket</button>
                                     
                                 </div>
                             </div>
@@ -58,7 +57,4 @@ function categoriesTepmlate(){
          }
          document.getElementById('newCategories').innerHTML = categoriesRef;
 }
-
-
-// <button type="button" onclick=" addBasket(${indexMenu})" class="${addLiked(indexMenu)}"></button>
 // ======================================================================================

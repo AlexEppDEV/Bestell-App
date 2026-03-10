@@ -17,24 +17,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// changeText(this)
 
-// let saveMenu = '';
 
 function addBasket(indexCategories, indexMenu, button) {
     document.getElementById("BasketTemplaceID").classList.add("open");
-    // let off = document.getElementById("basketBackgroundID");
-    // if (off) {
-    //     off.classList.add("off");  
-    // } 
     let basketMenuName = foodMenu[indexCategories].menu[indexMenu].name;
     let basketMenuPrice = foodMenu[indexCategories].menu[indexMenu].price;
-
     // kann sein das ich hier noch mal andere werte über tagen muss indexCategories und indexMenu
-    updateBasket(basketMenuName, basketMenuPrice);
+    updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu);
+    changeText(basketMenuName, basketMenuPrice, button);
 };
 
 
-function updateBasket(basketMenuName, basketMenuPrice) {
+function changeText(basketMenuName, basketMenuPrice, button) {
+    let item = basket.find(item =>
+        item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
+        console.log(item.number);
+    if (item.number > 0) {
+        
+        button.innerText = "Added 1";
+    } else {
+        button.innerText = "Add to basket";
+    }
+    item = '';
+};
+
+
+function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu) {
     let item = basket.find(item =>
         item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
         console.log(item);
@@ -44,6 +54,8 @@ function updateBasket(basketMenuName, basketMenuPrice) {
         basketMenuName: basketMenuName,
         basketMenuPrice: basketMenuPrice,
         number: 1,
+        indexCategoriesID: indexCategories,
+        indexMenuID: indexMenu,
         });
     }
 
@@ -63,7 +75,6 @@ function renderBasket() {
     };
     let off = document.getElementById("basketBackgroundID");
     if (basket.length === 0) {
-        // document.getElementById('basketFood').innerHTML = '';
         document.getElementById("basketFood").classList.add("off");
         document.getElementById("basketBackgroundID").classList.remove("off");
         document.getElementById('basketFood').innerHTML = ''; 
@@ -114,9 +125,19 @@ function basketAddMenu (basketMenuIndex) {
 
 
 function basketDeleteMenu (basketMenuIndex) {
+
+    let categoryIndex = basket[basketMenuIndex].indexCategoriesID;
+    let menuIndex = basket[basketMenuIndex].indexMenuID;
+
+    let button = document.getElementById(`addBasketID${categoryIndex}-${menuIndex}`);
+
     let menuNumberDelete = basket[basketMenuIndex].number -= 1;
     if (menuNumberDelete <= 0 ) {
         basket.splice(basketMenuIndex,1);
+        if (button) {
+            button.innerText = "Add to basket";
+        }
+        
     }
     renderBasket();
     

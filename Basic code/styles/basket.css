@@ -1,6 +1,7 @@
  
 .basketSection {
     width: 320px;
+    max-width: calc(1440px - 340px);;
     height: 100%;
     position: absolute;
     z-index: 1; 
@@ -18,7 +19,7 @@
 
 .basket {
     width: 100%; 
-    height: 700px; 
+    height: 600px; 
     background-color: #444;
     display: flex;
     flex-direction: column;
@@ -37,7 +38,7 @@
     position: sticky;
     top: 0; 
     /* klebt am oberen Rand innerhalb von main/Scroll-Kontext */
-     justify-self: end; 
+     /* justify-self: right;  */
     /* am rechten Rand der Spalte ausrichten */
 }
 
@@ -204,7 +205,19 @@ height: 24px;
 
 
 .basketBackground {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
+}
+
+.basketBackground img {
+    height: 120px;
+    width: 120px;
+    padding: 20px;
 }
 
 
@@ -224,7 +237,7 @@ height: 24px;
     align-items: center;
     flex-direction: column;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     box-sizing: border-box;
 }
 
@@ -259,12 +272,12 @@ td {
 
 
 .basketFooter button {
-    height: 60px;
+    height: 50px;
     width: 288px;
-    font-size: 22px;
+    font-size: 16px;
     padding: 0;
     border: 0;
-    border-radius: 60px;
+    border-radius: 50px;
     cursor: pointer;
     background-color: #f7b185;
     transition:
