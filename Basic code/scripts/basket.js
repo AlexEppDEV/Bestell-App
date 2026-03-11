@@ -69,23 +69,29 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
 
 function renderBasket() {
     let refBasketMenu = '';
+
     for (let basketMenuIndex = 0; basketMenuIndex < basket.length; basketMenuIndex++) {
         refBasketMenu += TemplateBasketMenu(basketMenuIndex);
       
     };
     let off = document.getElementById("basketBackgroundID");
+
     if (basket.length === 0) {
         document.getElementById("basketFood").classList.add("off");
         document.getElementById("basketBackgroundID").classList.remove("off");
-        document.getElementById('basketFood').innerHTML = ''; 
+        document.getElementById("basketOrdersID").classList.add("off");
+        document.getElementById('basketFood').innerHTML = '';
+         
     }
     else {
         
        document.getElementById("basketBackgroundID").classList.add("off");
        document.getElementById("basketFood").classList.remove("off");
+       document.getElementById("basketOrdersID").classList.remove("off");
         // console.log(refBasketMenu);
         document.getElementById('basketFood').innerHTML = refBasketMenu;
     }
+    calTotal();
 };
 
 
@@ -143,8 +149,25 @@ function basketDeleteMenu (basketMenuIndex) {
     
 };
 
-function berechnung() {
-// let basketMenuPriceDelete = basket[basketMenuIndex].basketMenuPrice.replace(',','.');
-    // basketMenuPriceDelete = basketMenuPriceDelete / menuNumberDelete;
+function calTotal() {
+let calTotalRef = 0;
+let calTotal = 0;
+let deliveryFeePrice = 4.99;
+
+for (let index = 0; index < basket.length; index++) {
+    let calMenuPrice = basket[index].basketMenuPrice.replace(',','.');
+    let calMenuNumber = basket[index].number;
+    let calMenuTotal = calMenuPrice * calMenuNumber;
+    calTotalRef = calTotalRef + calMenuTotal;
+    
+}
+calTotal = calTotalRef + deliveryFeePrice;
+
+document.getElementById('SubtotalID').innerText = calTotalRef.toFixed(2).replace('.',',');
+document.getElementById('DeliveryFeeID').innerText = deliveryFeePrice.toFixed(2).replace('.',',');
+document.getElementById('totalID').innerText = calTotal.toFixed(2).replace('.',',');
+document.getElementById('totalButtonID').innerText = calTotal.toFixed(2).replace('.',',');
+
 };
 
+totalButtonID
