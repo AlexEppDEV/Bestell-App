@@ -150,11 +150,9 @@ function calTotal() {
 // ==============================
 let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
 let dialog = document.getElementById("dialogID");     // Dialog-Element
-// let hero = dialog.querySelector(".heroDialog");     // Innerer Dialogbereich
-// let allContent = '';
 
 // ==============================
-// Öffnet den Dialog (Papierkorb)
+// Öffnet den Dialog
 // ==============================
 function dialogOpen() {
     let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
@@ -162,19 +160,17 @@ function dialogOpen() {
     dialogRef.showModal();
     dialogRef.classList.add('opened');
     basketElement.classList.remove('open');
+
+    for (let index = 0; index < basket.length; index++) {
+        let buttonResetCategories = basket[index].indexCategoriesID;
+        let buttonResetMenu = basket[index].indexMenuID;
+        let buttonReset = "addBasketID"+ buttonResetCategories + "-" + buttonResetMenu;
+        document.getElementById(buttonReset).innerText = "Add to basket"; 
+    }
+
     basket.length = 0;
     console.log(basket);
-
-
-
     renderBasket();
-
-    let buttonReset = document.querySelector(".buttonAddBasket");
-    
-
-    for (let index = 0; index < buttonReset.length; index++) {
-        buttonReset[index].innerText = "Add to basket";   
-    }
 
     // setTimeout(() => {
     //     dialogClose()

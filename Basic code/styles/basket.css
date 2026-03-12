@@ -285,7 +285,83 @@ td {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+
+/* dialog basket */
+
+                                           /* DIALOG  */
+dialog {
+    width: 420px;
+    height: 270px;
+    background-color: #363534;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+
+dialog.opened {
+    border-radius: 5%;
+    transform: translateX(0);         
+}
+
+
+dialog::backdrop {
+    opacity: 0;                       
+    background-color: rgba(0, 0, 0, 0.5); 
+    transition: all 1s ease-in;       
+}
+
+
+dialog.opened::backdrop {
+    opacity: 1;                       
+    transition: all 1s ease-in;        
+}
+
+
+.heroDialog {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+
+.dialogHeader {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+
+.dialogContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 /* Utility Classes */
 .off {
     display: none;
+}
+
+/* Tablet */
+@media (min-width: 575px) and (max-width: 1024px) {
+    /* .basket {
+        width: 100%;
+    } */
+}
+
+/* Smartphone */
+@media (min-width: 300px) and (max-width: 576px) {
+    /* .basket {
+        width: 100%;
+    } */
 }
