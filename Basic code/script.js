@@ -1,15 +1,11 @@
 
-
-
 function init() {
-    renderCategories();
-    
+    renderCategories();   
 };
 
 function renderCategories() {
     categoriesTepmlate();
 };
-
 // ======================================================================================
 function categoriesTepmlate(){
     let categoriesRef = ' ';

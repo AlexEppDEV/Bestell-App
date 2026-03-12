@@ -11,9 +11,11 @@
     <link rel="shortcut icon" href="./assets/icons/Logo 01.png" type="image/x-icon">
     <link rel="stylesheet" href="">
     <script src="./scripts/foodMenu.js"></script>
-    <script src="./script.js"></script>
-    <script src="./scripts/assets.js"></script>
     <script src="./scripts/basket.js"></script>
+    <script src="./scripts/assets.js"></script>
+    <script src="./script.js"></script>
+    
+    
 </head>
 <body onload="init()">
     <header class="navbarHeader">
@@ -55,7 +57,7 @@
             <section id="newCategories" class="newCategories">      
             </section>
 
-            <!-- bastekt um bauen mit neue section das ferter geht nicht mehr mit -->
+            <!-- bastekt um bauen mit neue section das ferter geht nicht mehr mit bei größe auflösung -->
             <section id="BasketTemplaceID"  class="basketSection">  
                 <section class="basket" id="basket"> 
                     <header class="basketHeader">
@@ -90,10 +92,23 @@
                                 </tr>    
                             </tfoot>                          
                         </table>
-                        <button type="button" onclick="">Buy now (<span id="totalButtonID">41,69</span>€)</button>
+                        <button type="button" onclick="dialogOpen()">Buy now (<span id="totalButtonID">41,69</span>€)</button>
                     </footer>
                 </section>    
             </section>
+
+            <dialog id="dialogID">
+                <section class="heroDialog"> 
+                        <header class="dialogHeader">
+                            <button onclick="dialogClose()" class="closeButtonDialog" tabindex="0">X</button>
+                        </header>
+                        <section class="dialogContent">
+                            <img src="./assets/icons/dialogBasketPicture.png" alt="delivery van">
+                            <h3>Order confirmed!</h3>
+                            <p>Your food is on the way!</p>
+                        </section>
+                </section>
+            </dialog> 
     </main>
             
     <footer> 

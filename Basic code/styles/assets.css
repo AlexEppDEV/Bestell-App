@@ -116,5 +116,66 @@
     transform: scale(0.96);
 }
 
+/* dialog basket */
 
+                                           /* DIALOG  */
+dialog {
+    width: 420px;
+    height: 270px;
+    background-color: #363534;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+
+dialog.opened {
+    /* border: 5px solid rgba(13, 87, 31, 0.278);              */
+    border-radius: 5%;
+    transform: translateX(0);         
+}
+
+
+dialog::backdrop {
+    opacity: 0;                       
+    background-color: rgba(0, 0, 0, 0.5); 
+    transition: all 1s ease-in;       
+}
+
+
+dialog.opened::backdrop {
+    opacity: 1;                       
+    transition: all 1s ease-in;        
+}
+
+
+.heroDialog {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+
+.dialogHeader {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* border-bottom: 5px;
+    border-color: black; */
+}
+
+
+.dialogContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 

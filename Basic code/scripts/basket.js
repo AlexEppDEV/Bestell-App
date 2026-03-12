@@ -5,19 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let basketOpen = document.getElementById('testOpen');
     let closeButton = document.getElementById('basketClose');
     let basket = document.getElementById('BasketTemplaceID');
-
     basketOpen.addEventListener('click', () => {
-        basket.classList.toggle('open');
-        
+        basket.classList.toggle('open');  
     });
     closeButton.addEventListener('click', () => {
-        basket.classList.toggle('open');
-        
+        basket.classList.toggle('open');   
     });
 });
-
-
-// changeText(this)
 
 
 function addBasket(indexCategories, indexMenu, button) {
@@ -47,8 +41,7 @@ function changeText(basketMenuName, basketMenuPrice, button) {
 function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu) {
     let item = basket.find(item =>
         item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
-        console.log(item);
-    
+        console.log(item);    
     if (!item) {
         basket.push({
         basketMenuName: basketMenuName,
@@ -58,7 +51,6 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
         indexMenuID: indexMenu,
         });
     }
-
     else {
         item.number += 1;
         };
@@ -69,41 +61,32 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
 
 function renderBasket() {
     let refBasketMenu = '';
-
-    for (let basketMenuIndex = 0; basketMenuIndex < basket.length; basketMenuIndex++) {
-        refBasketMenu += TemplateBasketMenu(basketMenuIndex);
-      
-    };
     let off = document.getElementById("basketBackgroundID");
 
     if (basket.length === 0) {
         document.getElementById("basketFood").classList.add("off");
         document.getElementById("basketBackgroundID").classList.remove("off");
         document.getElementById("basketOrdersID").classList.add("off");
-        document.getElementById('basketFood').innerHTML = '';
-         
+        document.getElementById('basketFood').innerHTML = '';    
     }
-    else {
-        
+    else { 
+        for (let basketMenuIndex = 0; basketMenuIndex < basket.length; basketMenuIndex++) {
+        refBasketMenu += TemplateBasketMenu(basketMenuIndex);
+        };   
        document.getElementById("basketBackgroundID").classList.add("off");
        document.getElementById("basketFood").classList.remove("off");
        document.getElementById("basketOrdersID").classList.remove("off");
-        // console.log(refBasketMenu);
         document.getElementById('basketFood').innerHTML = refBasketMenu;
     }
     calTotal();
 };
 
 
-
 function TemplateBasketMenu(basketMenuIndex) {
     let menuNumberCal = basket[basketMenuIndex].number;
     let newBasketMenuPrice = basket[basketMenuIndex].basketMenuPrice.replace(',','.');
-    // console.log(newBasketMenuPrice)
      let calculationPrice = newBasketMenuPrice * menuNumberCal;
      calculationPrice = calculationPrice.toFixed(2).replace('.',',');
-
-
         return `
         <section class="basketMenu">
             <header class="basketFoodName">
@@ -131,43 +114,99 @@ function basketAddMenu (basketMenuIndex) {
 
 
 function basketDeleteMenu (basketMenuIndex) {
-
     let categoryIndex = basket[basketMenuIndex].indexCategoriesID;
     let menuIndex = basket[basketMenuIndex].indexMenuID;
-
     let button = document.getElementById(`addBasketID${categoryIndex}-${menuIndex}`);
-
     let menuNumberDelete = basket[basketMenuIndex].number -= 1;
     if (menuNumberDelete <= 0 ) {
         basket.splice(basketMenuIndex,1);
         if (button) {
             button.innerText = "Add to basket";
-        }
-        
+        }  
     }
-    renderBasket();
-    
+    renderBasket();  
 };
+
 
 function calTotal() {
-let calTotalRef = 0;
-let calTotal = 0;
-let deliveryFeePrice = 4.99;
-
-for (let index = 0; index < basket.length; index++) {
-    let calMenuPrice = basket[index].basketMenuPrice.replace(',','.');
-    let calMenuNumber = basket[index].number;
-    let calMenuTotal = calMenuPrice * calMenuNumber;
-    calTotalRef = calTotalRef + calMenuTotal;
-    
-}
-calTotal = calTotalRef + deliveryFeePrice;
-
-document.getElementById('SubtotalID').innerText = calTotalRef.toFixed(2).replace('.',',');
-document.getElementById('DeliveryFeeID').innerText = deliveryFeePrice.toFixed(2).replace('.',',');
-document.getElementById('totalID').innerText = calTotal.toFixed(2).replace('.',',');
-document.getElementById('totalButtonID').innerText = calTotal.toFixed(2).replace('.',',');
-
+    let calTotalRef = 0;
+    let calTotal = 0;
+    let deliveryFeePrice = 4.99;
+    for (let index = 0; index < basket.length; index++) {
+        let calMenuPrice = basket[index].basketMenuPrice.replace(',','.');
+        let calMenuNumber = basket[index].number;
+        let calMenuTotal = calMenuPrice * calMenuNumber;
+        calTotalRef = calTotalRef + calMenuTotal;
+    }
+    calTotal = calTotalRef + deliveryFeePrice;
+    document.getElementById('SubtotalID').innerText = calTotalRef.toFixed(2).replace('.',',');
+    document.getElementById('DeliveryFeeID').innerText = deliveryFeePrice.toFixed(2).replace('.',',');
+    document.getElementById('totalID').innerText = calTotal.toFixed(2).replace('.',',');
+    document.getElementById('totalButtonID').innerText = calTotal.toFixed(2).replace('.',',');
 };
 
-totalButtonID
+// ==============================
+// Dialog-Referenzen (Modal)
+// ==============================
+let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
+let dialog = document.getElementById("dialogID");     // Dialog-Element
+// let hero = dialog.querySelector(".heroDialog");     // Innerer Dialogbereich
+// let allContent = '';
+
+// ==============================
+// Öffnet den Dialog (Papierkorb)
+// ==============================
+function dialogOpen() {
+    let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
+    let basketElement = document.getElementById('BasketTemplaceID');
+    dialogRef.showModal();
+    dialogRef.classList.add('opened');
+    basketElement.classList.remove('open');
+    basket.length = 0;
+    console.log(basket);
+
+
+
+    renderBasket();
+
+    let buttonReset = document.querySelector(".buttonAddBasket");
+    
+
+    for (let index = 0; index < buttonReset.length; index++) {
+        buttonReset[index].innerText = "Add to basket";   
+    }
+
+    // setTimeout(() => {
+    //     dialogClose()
+
+    // }, 5000);
+    
+     // arraySaveLocalStorage();
+    // allContent = 'trashContent';
+    // allRenderNotes(allContent);  
+};
+
+
+// ==============================
+// Schließt den Dialog
+// ==============================
+function dialogClose() {
+    let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
+    dialogRef.close();
+    dialogRef.classList.remove('opened');
+};
+
+
+// ==============================
+// EventListener für Dialog-Interaktionen
+// ==============================
+function setEventListener() {
+    let hero = dialog.querySelector(".heroDialog");     // Innerer Dialogbereich
+    hero.addEventListener("click", function(event) {
+        event.stopPropagation(); // Klick im Dialog verhindern
+    });
+
+    dialog.addEventListener("click", function() {
+        dialog.close(); // Klick außerhalb schließt Dialog
+    });
+};
