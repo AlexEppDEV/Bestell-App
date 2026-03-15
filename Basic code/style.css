@@ -7,6 +7,7 @@
     --font-family-one:"Palanquin", sans-serif ;
     --font-family-two:"Palanquin Dark", sans-serif ;
     --court-background-color: #FDEADC;
+    --side-left-padding: 100px;
 }
 
 
@@ -150,6 +151,7 @@ p {
     font-weight: var(--font-weight-normal);
     margin: 0;
     gap: 5px;
+    padding-top: 12px;
 }
 
 
@@ -255,25 +257,56 @@ main {
     width: 100%; 
     height: auto;
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* position: relative;
+    z-index: 0; */
+    /* justify-content: flex-end;
     align-items: flex-start;
     position: relative;
-    z-index: 0;
+    z-index: 0; */
 }
 
 
 .newCategories {
     width: 100%;
     display: flex;
+    justify-content: flex-end;
+    /* align-items: flex-start; */
+    /* flex-direction: column; */
+    position: relative;
+    z-index: 0;
+}
+
+
+/* hier noch mal schauen  */
+.contentWrapper {
+    width: 100%;        /* nutzt komplette verfügbare Breite */
+    /* max-width: 1440px;  maximale Inhaltsbreite */
+    margin: 0;     /* zentriert den Inhalt im Bildschirm */
+    box-sizing: border-box;
+    display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+
 }
 
 
 .sectionCourt {
     width: 100%;
     height: auto;
+    box-sizing: border-box;
+}
+
+
+.sectionHeaderInner {
+    width: 100%;
+    max-width: 1440px;
+    /* margin: 0 auto; */
     box-sizing: border-box;
 }
 
@@ -289,13 +322,26 @@ main {
 
 
 .sectionTitle {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     width: 100%;
-    padding-left: 100px;
+    padding-left: 120px;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+
+.sectionContentInner {
+    /* width: calc(100% - 340px); */
+    /* width: 100%; */
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 
@@ -314,29 +360,32 @@ main {
 
 
 /* court */
-.BurgerSandwiches {
-    width: calc(100% - 340px);
-    max-width: 1440px ;
+.foodMenu {
+    /* width: calc(100% - 340px); */
+    /* max-width: 1440px ; */
+    padding: 16px 0 16px 100px;
     box-sizing: border-box;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 
-
+/* hier noch mal schauen */
 .newMenu {
-    width: 100%;
+    /* width: 100%;
     padding: 16px 0 16px 100px;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; */
+    margin: 0;
 }
 
 
 .court {
     width: 750px;
+    /* width: calc(100% - 340px); */
     height: 140px;
     border-radius: 12px;
     padding: 10px;
@@ -449,12 +498,19 @@ main {
     transform: scale(0.96);
 }
 
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .court {
+    width: 550px;
+}
+
+}
 
 /* Tablet */
 @media (min-width: 575px) and (max-width: 1024px) {
-    /* .basket {
-        width: 100%;
-    } */
+      .court {
+    width: 550px;
+}
 }
 
 /* Smartphone */

@@ -18,7 +18,6 @@ function addBasket(indexCategories, indexMenu, button) {
     document.getElementById("BasketTemplaceID").classList.add("open");
     let basketMenuName = foodMenu[indexCategories].menu[indexMenu].name;
     let basketMenuPrice = foodMenu[indexCategories].menu[indexMenu].price;
-    // kann sein das ich hier noch mal andere werte über tagen muss indexCategories und indexMenu
     updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu);
     changeText(basketMenuName, basketMenuPrice, button);
 };
@@ -27,9 +26,7 @@ function addBasket(indexCategories, indexMenu, button) {
 function changeText(basketMenuName, basketMenuPrice, button) {
     let item = basket.find(item =>
         item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
-        console.log(item.number);
-    if (item.number > 0) {
-        
+    if (item.number > 0) { 
         button.innerText = "Added 1";
     } else {
         button.innerText = "Add to basket";
@@ -40,8 +37,7 @@ function changeText(basketMenuName, basketMenuPrice, button) {
 
 function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu) {
     let item = basket.find(item =>
-        item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
-        console.log(item);    
+        item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);   
     if (!item) {
         basket.push({
         basketMenuName: basketMenuName,
@@ -54,7 +50,7 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
     else {
         item.number += 1;
         };
-        console.log(basket);
+        localStorage.setItem('basket', JSON.stringify(basket));
         renderBasket();
 };
 
@@ -62,7 +58,6 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
 function renderBasket() {
     let refBasketMenu = '';
     let off = document.getElementById("basketBackgroundID");
-
     if (basket.length === 0) {
         document.getElementById("basketFood").classList.add("off");
         document.getElementById("basketBackgroundID").classList.remove("off");
@@ -92,7 +87,7 @@ function TemplateBasketMenu(basketMenuIndex) {
             <header class="basketFoodName">
                 <p><span id="basketMenuNumber${basketMenuIndex}">${basket[basketMenuIndex].number}</span> x ${basket[basketMenuIndex].basketMenuName}</p>
             </header>
-            <main class="basketFoodPrice">
+            <section class="basketFoodPrice">
                 <div class="basketButtonBar">
                     <button type="button" onclick="basketDeleteMenu(${basketMenuIndex}, this)" id="basketMenuDeleteID${basketMenuIndex}"  class="moreMenu">
                          <img src="./assets/icons/trashcan.png" alt="">
@@ -101,7 +96,7 @@ function TemplateBasketMenu(basketMenuIndex) {
                     <button type="button" onclick="basketAddMenu(${basketMenuIndex}, this)" id="basketMenuIndex${basketMenuIndex}"  class="moreMenu">1+</button>
                 </div>
                 <p ><span id="basketMenuPriceId${basketMenuIndex}">${calculationPrice}</span>€</p>
-            </main>
+            </section>
         </section>
     `;
 };
@@ -109,6 +104,7 @@ function TemplateBasketMenu(basketMenuIndex) {
 
 function basketAddMenu (basketMenuIndex) {
     basket[basketMenuIndex].number += 1;
+    localStorage.setItem('basket', JSON.stringify(basket));
     renderBasket();
 };
 
@@ -124,6 +120,7 @@ function basketDeleteMenu (basketMenuIndex) {
             button.innerText = "Add to basket";
         }  
     }
+     localStorage.setItem('basket', JSON.stringify(basket));
     renderBasket();  
 };
 
@@ -145,64 +142,58 @@ function calTotal() {
     document.getElementById('totalButtonID').innerText = calTotal.toFixed(2).replace('.',',');
 };
 
-// ==============================
-// Dialog-Referenzen (Modal)
-// ==============================
-let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
-let dialog = document.getElementById("dialogID");     // Dialog-Element
 
 // ==============================
-// Öffnet den Dialog
+// Dialog-Ref (Modal)
+// ==============================
+let dialogRef = document.getElementById('dialogID');   
+let dialog = document.getElementById("dialogID");     
+
+
+// ==============================
+// Open Dialog
 // ==============================
 function dialogOpen() {
-    let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
+    let dialogRef = document.getElementById('dialogID');
     let basketElement = document.getElementById('BasketTemplaceID');
     dialogRef.showModal();
     dialogRef.classList.add('opened');
     basketElement.classList.remove('open');
-
     for (let index = 0; index < basket.length; index++) {
         let buttonResetCategories = basket[index].indexCategoriesID;
         let buttonResetMenu = basket[index].indexMenuID;
         let buttonReset = "addBasketID"+ buttonResetCategories + "-" + buttonResetMenu;
         document.getElementById(buttonReset).innerText = "Add to basket"; 
     }
-
     basket.length = 0;
+    localStorage.clear();
     console.log(basket);
     renderBasket();
-
-    // setTimeout(() => {
-    //     dialogClose()
-
-    // }, 5000);
-    
-     // arraySaveLocalStorage();
-    // allContent = 'trashContent';
-    // allRenderNotes(allContent);  
+    setTimeout(() => {
+        dialogClose()
+    }, 5000);  
 };
 
 
 // ==============================
-// Schließt den Dialog
+// Close Dialog
 // ==============================
 function dialogClose() {
-    let dialogRef = document.getElementById('dialogID');   // Referenz auf Dialog
+    let dialogRef = document.getElementById('dialogID');
     dialogRef.close();
     dialogRef.classList.remove('opened');
 };
 
 
 // ==============================
-// EventListener für Dialog-Interaktionen
+// EventListener for Dialog
 // ==============================
 function setEventListener() {
-    let hero = dialog.querySelector(".heroDialog");     // Innerer Dialogbereich
+    let hero = dialog.querySelector(".heroDialog");
     hero.addEventListener("click", function(event) {
-        event.stopPropagation(); // Klick im Dialog verhindern
+        event.stopPropagation();
     });
-
     dialog.addEventListener("click", function() {
-        dialog.close(); // Klick außerhalb schließt Dialog
+        dialog.close();
     });
 };

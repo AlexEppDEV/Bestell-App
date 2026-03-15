@@ -54,48 +54,51 @@
     </section>
 
     <main> 
-            <section id="newCategories" class="newCategories">      
-            </section>
-
-            <!-- bastekt um bauen mit neue section das ferter geht nicht mehr mit bei größe auflösung -->
-            <section id="BasketTemplaceID"  class="basketSection">  
-                <section class="basket" id="basket"> 
-                    <header class="basketHeader">
-                        <div class="buttonBar">
-                            <button id="basketClose" class="closeButton" tabindex="0">X</button>
+            <section id="newCategories" class="newCategories">
+                <section class="contentWrapper" id="contentWrapperID">
+                    
+                </section>      
+            
+                <section id="BasketTemplaceID"  class="basketSection">  
+                    <section class="basket" id="basket"> 
+                        <header class="basketHeader">
+                            <div class="buttonBar">
+                                <button id="basketClose" class="closeButton" tabindex="0">X</button>
+                            </div>
+                            <h2>Your Basket</h2>
+                        </header>
+                        <section class="basketContents" id="basketFood">
+                        </section>
+                        <div id="basketBackgroundID" class="basketBackground">
+                                <p>Nothing here yet. Go ahead and choose something delicious!</p>
+                                <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
                         </div>
-                        <h2>Your Basket</h2>
-                    </header>
-                    <section class="basketContents" id="basketFood">
-                    </section>
-                    <div id="basketBackgroundID" class="basketBackground">
-                            <p>Nothing here yet. Go ahead and choose something delicious!</p>
-                            <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
-                    </div>
 
-                    <footer class="basketFooter" id="basketOrdersID">  
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Subtotal</th>
-                                    <td > <span id="SubtotalID">0</span>€</td>
-                                </tr>
-                                <tr>
-                                    <th>Delivery fee</th>
-                                    <td ><span id="DeliveryFeeID">4,99</span>€</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Total</th>
-                                    <td id="totalID"> <span id="totalID"> 0</span>€</td>
-                                </tr>    
-                            </tfoot>                          
-                        </table>
-                        <button type="button" onclick="dialogOpen()">Buy now (<span id="totalButtonID">41,69</span>€)</button>
-                    </footer>
-                </section>    
-            </section>
+                        <footer class="basketFooter" id="basketOrdersID">  
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Subtotal</th>
+                                        <td > <span id="SubtotalID">0</span>€</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Delivery fee</th>
+                                        <td ><span id="DeliveryFeeID">4,99</span>€</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Total</th>
+                                        <td id="totalID"> <span id="totalID"> 0</span>€</td>
+                                    </tr>    
+                                </tfoot>                          
+                            </table>
+                            <button type="button" onclick="dialogOpen()">Buy now (<span id="totalButtonID">41,69</span>€)</button>
+                        </footer>
+                    </section>    
+                </section>
+                
+             </section>
 
             <dialog id="dialogID">
                 <section class="heroDialog"> 
