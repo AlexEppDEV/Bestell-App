@@ -180,6 +180,11 @@ p {
 }
 
 
+.reviews p {
+    padding: 0;
+}
+
+
 .reviews img  {
     width: 24px;
     height: 23px;
@@ -200,6 +205,247 @@ p {
     font-weight: var(--font-weight-normal);
     font-size: 18px;
     margin: 0;
+}
+
+
+.copyright {
+    width: 180px;
+    height: 24px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.copyrightImg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* main */
+main {
+    width: 100%; 
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.newCategories {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 0;
+}
+
+
+.contentWrapper {
+    width: 100%;
+    margin: 0;     
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.sectionCourt {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+.sectionHeaderInner {
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+}
+
+
+.sectionHeader {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-nav-background-color);
+}
+
+
+.sectionTitle {
+    width: 100%;
+    padding-left: 120px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.sectionContentInner {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.sectionCourtLogo {
+    width: 90px;
+    height: 90px;
+}
+
+
+.sectionCourtLogo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+}
+
+
+/* court */
+.foodMenu {
+    padding: 16px 0 16px 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.newMenu {
+    margin: 0;
+}
+
+
+.court {
+    width: 750px;
+    height: 150px;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--court-background-color);
+}
+
+
+.courtImg {
+    width: 210px;
+    height: 130px;
+    border-radius: 12px;
+    padding-right: 10px;
+    flex-shrink: 0;
+}
+
+
+.courtImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0;
+}
+
+
+.foodInfo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+
+.courtTitle {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.courtTitle p {
+    line-height: 1.1;
+}
+
+
+.courtPrice {
+    width: 100%;
+}
+
+
+.courtButton {
+    width: 100%;
+    text-align: end;
+}
+
+
+.buttonBar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+}
+
+
+.buttonAddBasket {
+    font-size: 16px;
+    border: 0;
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    color: #363534;
+}
+
+
+.buttonPrice {
+    height: 100%;
+    width: 130px;
+    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+.buttonPrice button {
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.buttonPrice button:hover {
+    background-color: #f7b185;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Klick Effekt */
+.buttonPrice button:active {
+    transform: scale(0.96);
 }
 
 
@@ -233,190 +479,150 @@ footer p {
     font-family: var(--font-family-one);
     font-weight: var(--font-weight-normal);
     font-size: 18px;
+    padding: 0;
 }
 
 
-.copyright {
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1200px) {
+.court {
+     width: 100%;
+}
+
+
+.foodMenu {
+    width: calc(100% - 340px);
+    padding: 16px 0 16px 50px;
+}
+
+
+.courtImg {
     width: 180px;
-    height: 24px;
+}
+}
+
+
+/* Tablet */
+@media (min-width: 767px) and (max-width: 1024px) {
+.logo2 {
+    padding-left: 60px;
+    width: 72px;
+    height: 30px;
     gap: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
-.copyrightImg {
-    width: 24px;
-    height: 24px;
-}
-
-
-/* main */
-main {
-    width: 100%; 
-    height: auto;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    /* position: relative;
-    z-index: 0; */
-    /* justify-content: flex-end;
-    align-items: flex-start;
-    position: relative;
-    z-index: 0; */
-}
-
-
-.newCategories {
+.navbarHeader {
+    height: 100px;
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    /* align-items: flex-start; */
-    /* flex-direction: column; */
-    position: relative;
-    z-index: 0;
 }
 
 
-/* hier noch mal schauen  */
-.contentWrapper {
-    width: 100%;        /* nutzt komplette verfügbare Breite */
-    /* max-width: 1440px;  maximale Inhaltsbreite */
-    margin: 0;     /* zentriert den Inhalt im Bildschirm */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+.burgerBigLogo {
+    width: 150px;
+    height: 150px;
+    padding-top: 200px;
+    border-width: 8px;
 }
 
 
-.sectionCourt {
+.headerPhoto {
+    height: 300px;
+}
+
+
+.court {
     width: 100%;
-    height: auto;
-    box-sizing: border-box;
 }
 
 
-.sectionHeaderInner {
-    width: 100%;
-    max-width: 1440px;
-    /* margin: 0 auto; */
-    box-sizing: border-box;
+.foodMenu {
+    width: calc(100% - 280px);
+    padding: 16px 0 0 50px;
+}
+
+
+.courtImg {
+    width: 150px;
+}
+
+
+h1 {
+    font-family: var(--font-family-two);
+    font-weight: var(--font-weight-fat);
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    line-height: 1.1;
+}
+
+
+h2 {
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-fat);
+    font-size: 32px;
+    background-color: var(--header-nav-background-color);
+    height: 40px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+
+h3 {
+    padding-top: 0px;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-fat);
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+
+.reviews img  {
+    width: 20px;
+    height: 20px;
+    border-radius: 0.5px;
+}
+
+
+.reviewsRating {
+    font-size: 18px;
+}
+
+
+.reviewsVote {
+    font-size: 16px;
 }
 
 
 .sectionHeader {
     width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--header-nav-background-color);
+    height: 40px;
+    margin-top: 16px;
 }
 
 
 .sectionTitle {
-    /* max-width: 1440px; */
     width: 100%;
-    padding-left: 120px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-
-.sectionContentInner {
-    /* width: calc(100% - 340px); */
-    /* width: 100%; */
-    max-width: 1440px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    padding-left: 60px;
 }
 
 
 .sectionCourtLogo {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
 }
 
-
-.sectionCourtLogo img{
+.foodInfo {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    margin: 0;
-}
-
-
-/* court */
-.foodMenu {
-    /* width: calc(100% - 340px); */
-    /* max-width: 1440px ; */
-    padding: 16px 0 16px 100px;
-    box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-/* hier noch mal schauen */
-.newMenu {
-    /* width: 100%;
-    padding: 16px 0 16px 100px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; */
-    margin: 0;
-}
-
-
-.court {
-    width: 750px;
-    /* width: calc(100% - 340px); */
-    height: 140px;
-    border-radius: 12px;
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--court-background-color);
-}
-
-
-.courtImg {
-    width: 210px;
-    height: 120px;
-    border-radius: 12px;
-    padding-right: 10px;
-    flex-shrink: 0;
-}
-
-
-.courtImg img{
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    margin: 0;
+    flex-direction: column;
 }
 
 
 .courtTitle {
-    height: 140px;
     width: 100%;
     margin: 0;
     display: flex;
@@ -427,96 +633,53 @@ main {
 
 
 .courtTitle p {
-    line-height: 1.1;
-}
-
-
-.courtPrice {
-    width: 100%;
-}
-
-
-.courtButton {
-    width: 100%;
-    text-align: end;
-}
-
-.buttonBar {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-}
-
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-
-.buttonAddBasket {
-    font-size: 16px;
-    border: 0;
-    padding: 5px 10px;
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    color: #363534;
+padding-top: 8px;
 }
 
 
 .buttonPrice {
-    width: 120px;
-    height: 120px;
-    text-align: end;
+    height: 30px;
+    width: 100%;
+    text-align: start;
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-    flex-direction: column;
-    flex-shrink: 0;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }
 
 
-.buttonPrice button {
-    cursor: pointer;
-    transition:
-        background-color 0.3s ease,
-        transform 0.1s ease,
-        box-shadow 0.3s ease;
+.buttonPrice p {
+    padding: 0;
 }
 
 
-.buttonPrice button:hover {
-    background-color: #f7b185;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+footer {
+    width: 100%;
+    height: 100px;
+    padding: 32px 0;
+    margin-top: 16px;
 }
 
 
-/* Klick Effekt */
-.buttonPrice button:active {
-    transform: scale(0.96);
+footer section {
+    width: 530px;
+    height: 24px; 
+    gap: 72px;
 }
 
-/* Laptop */
-@media (min-width: 1024px) and (max-width: 1200px) {
-    .court {
-    width: 550px;
+
+footer p {
+    font-size: 16px;
 }
 
-}
 
-/* Tablet */
-@media (min-width: 575px) and (max-width: 1024px) {
-      .court {
-    width: 550px;
-}
 }
 
 /* Smartphone */
-@media (min-width: 300px) and (max-width: 576px) {
-    /* .basket {
-        width: 100%;
-    } */
+@media (min-width: 300px) and (max-width: 768px) {
+
+    footer {
+        margin-bottom: 80px;
+    }
 }
 

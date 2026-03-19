@@ -36,10 +36,11 @@ function categoriesTepmlate() {
         for (let indexMenu = 0; indexMenu < foodMenu[indexCategories].menu.length; indexMenu++) {
             menuRef += `
                 <div class="foodMenu">
-                        <div class="court">
-                            <div class="courtImg">
-                                <img src="./assets/img/${foodMenu[indexCategories].menu[indexMenu].menuImg}.jpg" alt="Veggie mushroom black burger">
-                            </div>
+                    <div class="court">
+                        <div class="courtImg">
+                            <img src="./assets/img/${foodMenu[indexCategories].menu[indexMenu].menuImg}.jpg" alt="Veggie mushroom black burger">
+                        </div>
+                        <div class="foodInfo">
                             <div class="courtTitle">
                                 <h3>${foodMenu[indexCategories].menu[indexMenu].name}</h3>
                                 <p>${foodMenu[indexCategories].menu[indexMenu].ingredients}</p>
@@ -56,7 +57,8 @@ function categoriesTepmlate() {
                                     </button>
                                 </div>
                             </div>
-                        </div>       
+                        </div>
+                    </div>       
                 </div>`;
         }
         categoriesRef += `

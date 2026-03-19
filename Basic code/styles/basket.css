@@ -6,15 +6,11 @@
     position: absolute;
     z-index: 1; 
     flex-grow: 1;
-    /* Komplett aus dem Bild geschoben */
-    /* transform: translateX(100%); 
-    transition: transform 0.3s ease-in-out; */
     display: none;
 }
 
 
 .basketSection.open {
-    /* transform: translateX(0); */
     display: unset;
 }
 
@@ -35,13 +31,8 @@
     margin: 0;
     box-sizing: border-box;
     padding: 16px 16px;
-
-    /* neu */
     position: sticky;
     top: 0; 
-    /* klebt am oberen Rand innerhalb von main/Scroll-Kontext */
-     /* justify-self: right;  */
-    /* am rechten Rand der Spalte ausrichten */
 }
 
 
@@ -84,7 +75,7 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
-    background-color: #f7b185;
+    background-color: white;
     transition:
         background-color 0.3s ease,
         transform 0.1s ease,
@@ -98,7 +89,6 @@
 }
 
 
-/* Klick Effekt */
 .closeButton:active {
     transform: scale(0.96);
 }
@@ -196,7 +186,6 @@ height: 24px;
 }
 
 
-/* Klick Effekt */
 .basketButtonBar button:active {
     transform: scale(0.96);
 }
@@ -222,7 +211,7 @@ height: 24px;
 
 /* footer basket */
 .basketFooter {
-    width: 320px;
+    width: 100%;
     height: 240px;
     padding: 16px;
     background-color: #444;
@@ -267,7 +256,7 @@ td {
 
 .basketFooter button {
     height: 50px;
-    width: 288px;
+    width: 100%;
     font-size: 16px;
     padding: 0;
     border: 0;
@@ -289,8 +278,6 @@ td {
 
 
 /* dialog basket */
-
-                                           /* DIALOG  */
 dialog {
     width: 420px;
     height: 270px;
@@ -348,21 +335,118 @@ dialog.opened::backdrop {
     flex-direction: column;
 }
 
+.closeButtonDialog {
+
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: white;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.closeButtonDialog:hover {
+    background-color:var(--reviews-background-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.closeButtonDialog:active {
+    transform: scale(0.96);
+}
+
 
 /* Utility Classes */
 .off {
     display: none;
 }
 
+
 /* Tablet */
-@media (min-width: 575px) and (max-width: 1024px) {
-    /* .basket {
-        width: 100%;
-    } */
+@media (min-width: 767px) and (max-width: 1024px) {
+.basketSection {
+    width: 250px;
+    max-width: calc(1440px - 280px);;
+    height: 100%;
+}
+
+.basket {
+    width: 100%; 
+    height: 500px; 
+    gap: 8px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 10px 10px;
+    top: 0;
+    margin-top: 16px;
+}
+
+
+.basketHeader {
+    width: 100%;
+    height: 60px;
+}
+
+
+.basketHeader h2 {
+    font-size: 32px; 
+    margin: 0;
+    padding-top: 0px; 
+}
+
+
+.basketMenu {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;   
+    padding: 10px 10px; 
+    gap: 6px;
+    line-height: 1.2;
+}
+
+
+.basketMenu p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+.basketFoodName { 
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.basketFoodPrice {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.basketButtonBar {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 }
 
 /* Smartphone */
-@media (min-width: 300px) and (max-width: 576px) {
+@media (min-width: 300px) and (max-width: 768px) {
     /* .basket {
         width: 100%;
     } */
