@@ -91,8 +91,7 @@ function TemplateBasketMenu(basketMenuIndex) {
                 <div class="basketButtonBar">
                     <button type="button" onclick="basketDeleteMenu(${basketMenuIndex}, this)" id="basketMenuDeleteID${basketMenuIndex}"  class="moreMenu">
                          <img src="./assets/icons/trashcan.png" alt="">
-                    </button>
-                    
+                    </button>               
                     <button type="button" onclick="basketAddMenu(${basketMenuIndex}, this)" id="basketMenuIndex${basketMenuIndex}"  class="moreMenu">1+</button>
                 </div>
                 <p ><span id="basketMenuPriceId${basketMenuIndex}">${calculationPrice}</span>€</p>

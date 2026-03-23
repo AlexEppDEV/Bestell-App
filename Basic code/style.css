@@ -10,6 +10,10 @@
     --side-left-padding: 100px;
 }
 
+* {
+   
+}
+
 
 body{
     width: 100%;
@@ -52,6 +56,16 @@ body{
     gap: 4px;
 }
 
+.heroTitle {
+    max-width: 1440px;
+    width: 100%;
+    opacity: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;   
+}
 
 .headerPhoto {
     height: 439px;
@@ -61,7 +75,7 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     box-sizing: border-box;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -678,8 +692,95 @@ footer p {
 /* Smartphone */
 @media (min-width: 300px) and (max-width: 768px) {
 
+    .navbarHeader {
+    height: 80px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    }
+
+    .logo2 {
+    padding-left: 16px;
+    width: 85px;
+    height: 35px;
+    gap: 4px;
+}
+.burger-bar, .nav-links
+  {
+ display: none;
+}
+h1 {
+
+    font-size: 40px;
+    line-height: 1.1;
+}
+.heroTitle {
+    padding: 16px;
+
+}
+.headerPhoto {
+    height: 340px;
+    width: 100%;
+    border-radius: 16px;
+    
+
+}
+
+
+.burgerBigLogo {
+    width: 120px;
+    height: 120px;
+    padding-top: 260px;
+    border-width: 13px;
+}
+
+
+/* .burgerBigLogo img {
+    width: 100%;
+    height: 100%;
+    border: solid;
+    border-radius: 100px;
+    border-color:  #FDEADC;
+    border-width: 13px;
+} */
+
+.headerTitle {
+    height: 243px;   
+}
+
+
+.headerSlogan {
+
+    font-size: 20px;
+    line-height: 1.2;
+
+}
+
+
+.title {
+    height: 75px;
+    padding-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+    main {
+        /* display: none; */
+    }
+    
     footer {
         margin-bottom: 80px;
+        /* display: flex;
+    justify-content: center;
+    align-items: center;
+        flex-direction: column; */
     }
+    footer section {
+        gap: 8px;
+        flex-direction: column;
+    }
+    
+
 }
 
