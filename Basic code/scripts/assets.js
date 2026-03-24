@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    let basketOpen = document.getElementById('testOpen');
-    let closeButton = document.getElementById('basketClose');
-    let basket = document.getElementById('BasketTemplaceID');
-    basketOpen.addEventListener('click', () => {
-        basket.classList.toggle('open');  
-    });
-    closeButton.addEventListener('click', () => {
-        basket.classList.toggle('open');   
-    });
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     let basketOpen = document.getElementById('testOpen');
+//     let closeButton = document.getElementById('basketClose');
+//     let basket = document.getElementById('BasketTemplaceID');
+//     basketOpen.addEventListener('click', () => {
+//         basket.classList.toggle('open');  
+//     });
+//     closeButton.addEventListener('click', () => {
+//         basket.classList.toggle('open');   
+//     });
+// });
 

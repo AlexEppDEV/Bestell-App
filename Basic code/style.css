@@ -10,10 +10,6 @@
     --side-left-padding: 100px;
 }
 
-* {
-   
-}
-
 
 body{
     width: 100%;
@@ -53,8 +49,8 @@ body{
     padding-left: 120px;
     width: 92px;
     height: 38px;
-    gap: 4px;
 }
+
 
 .heroTitle {
     max-width: 1440px;
@@ -67,6 +63,7 @@ body{
     flex-direction: column;   
 }
 
+
 .headerPhoto {
     height: 439px;
     opacity: 1;
@@ -75,7 +72,6 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     box-sizing: border-box;
-    /* max-width: 1440px; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -142,7 +138,6 @@ h2 {
     font-family: var(--font-family-one);
     font-weight: var(--font-weight-fat);
     font-size: 40px;
-    background-color: var(--header-nav-background-color);
     height: 60px;
     margin: 0;
     line-height: 1.2;
@@ -164,7 +159,6 @@ p {
     font-family: var(--font-family-one);
     font-weight: var(--font-weight-normal);
     margin: 0;
-    gap: 5px;
     padding-top: 12px;
 }
 
@@ -219,22 +213,6 @@ p {
     font-weight: var(--font-weight-normal);
     font-size: 18px;
     margin: 0;
-}
-
-
-.copyright {
-    width: 180px;
-    height: 24px;
-    gap: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.copyrightImg {
-    width: 24px;
-    height: 24px;
 }
 
 
@@ -381,7 +359,6 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 
@@ -480,12 +457,26 @@ footer {
 footer section {
     width: 530px;
     height: 24px; 
-    gap: 72px;
-    max-width: 1440px;
-    width: 100%;
+    /* max-width: 1440px; */
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.copyright {
+    width: 180px;
+    height: 24px;
+    gap: 4px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+
+.copyrightImg {
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -544,15 +535,14 @@ footer p {
     height: 300px;
 }
 
-
-.court {
-    width: 100%;
-}
-
-
 .foodMenu {
     width: calc(100% - 280px);
     padding: 16px 0 0 50px;
+}
+
+
+.court {
+    width: 100%;
 }
 
 
@@ -562,8 +552,6 @@ footer p {
 
 
 h1 {
-    font-family: var(--font-family-two);
-    font-weight: var(--font-weight-fat);
     font-size: 40px;
     text-align: center;
     margin: 0;
@@ -572,8 +560,6 @@ h1 {
 
 
 h2 {
-    font-family: var(--font-family-one);
-    font-weight: var(--font-weight-fat);
     font-size: 32px;
     background-color: var(--header-nav-background-color);
     height: 40px;
@@ -584,8 +570,6 @@ h2 {
 
 h3 {
     padding-top: 0px;
-    font-family: var(--font-family-one);
-    font-weight: var(--font-weight-fat);
     font-size: 20px;
     line-height: 1.1;
 }
@@ -625,6 +609,8 @@ h3 {
     width: 60px;
     height: 60px;
 }
+
+
 
 .foodInfo {
     width: 100%;
@@ -685,44 +671,57 @@ footer section {
 footer p {
     font-size: 16px;
 }
-
-
 }
 
 /* Smartphone */
-@media (min-width: 300px) and (max-width: 768px) {
-
-    .navbarHeader {
-    height: 80px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    }
-
-    .logo2 {
-    padding-left: 16px;
-    width: 85px;
-    height: 35px;
-    gap: 4px;
+@media (max-width: 768px) {
+.navbarHeader {
+height: 80px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
 }
-.burger-bar, .nav-links
-  {
+
+
+.logo2 {
+padding-left: 16px;
+width: 85px;
+height: 35px;
+gap: 4px;
+}
+
+
+.burger-bar, .nav-links {
  display: none;
 }
-h1 {
 
+
+h1 {
     font-size: 40px;
     line-height: 1.1;
 }
+
+
+h2 {
+    height: 32px;
+    font-size: 32px;
+}
+
+
+h3 {
+    padding-top: 8px;
+    line-height: 1.1;
+}
+
+
 .heroTitle {
     padding: 16px;
-
 }
+
+
 .headerPhoto {
     height: 340px;
     width: 100%;
     border-radius: 16px;
-    
-
 }
 
 
@@ -734,25 +733,15 @@ h1 {
 }
 
 
-/* .burgerBigLogo img {
-    width: 100%;
-    height: 100%;
-    border: solid;
-    border-radius: 100px;
-    border-color:  #FDEADC;
-    border-width: 13px;
-} */
-
 .headerTitle {
-    height: 243px;   
+    height: 243px;
+    padding-bottom: 40px;   
 }
 
 
 .headerSlogan {
-
     font-size: 20px;
     line-height: 1.2;
-
 }
 
 
@@ -763,24 +752,144 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-}
-
-    main {
-        /* display: none; */
     }
-    
-    footer {
-        margin-bottom: 80px;
-        /* display: flex;
+
+
+.sectionHeaderInner {
+    width: 100%;
+    height: 104px;
+    margin-bottom: 60px;
+    display: flex;
     justify-content: center;
     align-items: center;
-        flex-direction: column; */
-    }
-    footer section {
-        gap: 8px;
-        flex-direction: column;
-    }
     
+}
 
+
+.sectionHeader {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.sectionTitle {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.sectionContentInner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.sectionCourtLogo {
+    width: 58px;
+    height: 60px;
+}
+
+
+.foodInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.courtTitle p {
+padding-top: 8px;
+}
+
+
+.buttonPrice {
+    height: 32px;
+    width: 100%;
+    padding-top: 8px;
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.buttonPrice p {
+    padding: 0;
+}
+
+
+.foodMenu {
+    padding: 12px;
+    width: 100%;
+}
+
+
+.court {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+
+
+.courtImg{
+    width: 100%;
+    height: 86px;
+    border-radius: 12px;
+    padding: 0px;
+}
+
+
+.courtTitle {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+footer {
+    margin-bottom: 80px;
+}
+
+
+footer section {
+    gap: 8px;   
+    justify-content: center;
+    flex-direction: column;
+}
+footer p {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.copyright {
+height: 18px;
+}
+
+.copyrightImg {
+    width: 18px;
+    height: 18px;
+}
 }
 
