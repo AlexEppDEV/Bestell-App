@@ -21,21 +21,24 @@
     <header class="navbarHeader">
         
         <nav>
-            <img src="./assets/icons/Logo 02.png" alt="logo bestell App" class="logo2">   
-            <div class="burger-bar" id="burger-bar">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <img src="./assets/icons/Logo 02.png" alt="logo bestell App" class="logo2">
+            <section class="burgerNav">
+                <div class="burger-bar" id="burger-bar">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
 
-            <ul class="nav-links" id="nav-links-id">
-                <li><a href="#">Login</a></li>
-                <li><a href="#" id="testOpen">Basket</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>    
+                <ul class="nav-links" id="nav-links-id">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#" id="testOpen" class="basketOpen">Basket</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>    
+            </section>   
+            
         </nav>
     </header>
-    <section class="heroTitle">
+    <section class="heroTitle" id="hero">
         <section class="headerPhoto">
                 <div class="burgerBigLogo">
                     <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" >
@@ -131,7 +134,7 @@
    
     <section class="basketFoodBar">
        <nav class="basketFoodNav">
-            <button type="button" onclick=" " id=""  class="">
+            <button type="button" onclick=" " id=""  class="" href="hero" >
                 <img src="./assets/icons/home-icon.png" alt="">
             </button>
             <button type="button" onclick=" " id=""  class="">
@@ -140,7 +143,7 @@
             <button type="button" onclick=" " id=""  class="">
                 <img src="./assets/icons/logo-nav-bar.png" alt="">
             </button>
-            <button type="button" onclick=" " id=""  class="">
+            <button type="button" onclick=" " id="basketNavBar"  class="basketOpen">
                 <img src="./assets/icons/basket.png" alt="">
             </button>
        </nav>

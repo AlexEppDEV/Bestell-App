@@ -1,16 +1,16 @@
 
 // Basket close/open
-
 document.addEventListener('DOMContentLoaded', () => {
-    let basketOpen = document.getElementById('testOpen');
     let closeButton = document.getElementById('basketClose');
     let basket = document.getElementById('BasketTemplaceID');
-    basketOpen.addEventListener('click', () => {
-        basket.classList.toggle('open');  
-    });
-    closeButton.addEventListener('click', () => {
-        basket.classList.toggle('open');   
-    });
+    let buttonOpen = document.querySelectorAll('.basketOpen');
+     function toggleBasket() {
+        basket.classList.toggle('open');
+    }
+    for (let index = 0; index < buttonOpen.length; index++) {
+        buttonOpen[index].addEventListener('click', toggleBasket); 
+    }
+    closeButton.addEventListener('click', toggleBasket);
 });
 
 
