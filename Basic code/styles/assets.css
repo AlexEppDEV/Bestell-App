@@ -66,6 +66,7 @@
     border-bottom-right-radius: 20px;
 }
 
+
 .basketFoodNav {
     height: 100%;
     width: 100%;
@@ -74,13 +75,10 @@
     align-items: center;
 }
 
-.basketFoodNav img {
-   height: 100%;
-    width: 100%;
-    background-color: var(--fontColor-color);
-}
 
-.basketFoodNav button {
+.basketFoodNav img {
+    width: 30px;
+    height: 30px;
    padding: 0;
    margin: 0;
    border: 0;
@@ -88,16 +86,70 @@
     background-color: var(--fontColor-color);
 }
 
-.basketFoodNav button:hover {
-    background-color:var(--reviews-background-color);
+
+.basketFoodNav section:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 
-.basketFoodNav button:active {
+.basketFoodNav section:active {
     transform: scale(0.96);
 }
 
+
+.basketMenuCounter {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+
+.basketMenuCounter:hover img {
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+.basketMenuCounter:active {
+    transform: scale(0.96);
+}
+
+
+.basketMenuCounter img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+
+.basketNavBarNumber {
+    min-width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: var(--header-nav-background-color);
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+
+.basketNavBarNumber p {
+    font-size: 12px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
 
 
 /* Tablet */
@@ -128,16 +180,12 @@
     height: 80px;
      gap: 5px;
 }
-
 }
+
 
 /* Smartphone */
 @media (min-width: 300px) and (max-width: 575px) {
-    /* .basket {
-        width: 100%;
-    } */
-    .basketFoodBar {
-
+.basketFoodBar {
     display: block;
 }
 }

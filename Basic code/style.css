@@ -10,6 +10,7 @@
     --side-left-padding: 100px;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -438,7 +439,6 @@ main {
 }
 
 
-/* Klick Effekt */
 .buttonPrice button:active {
     transform: scale(0.96);
 }
@@ -461,7 +461,6 @@ footer {
 footer section {
     width: 530px;
     height: 24px; 
-    /* max-width: 1440px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -517,7 +516,6 @@ footer p {
     padding-left: 60px;
     width: 72px;
     height: 30px;
-    /* gap: 4px; */
 }
 
 
@@ -538,6 +536,7 @@ footer p {
 .headerPhoto {
     height: 300px;
 }
+
 
 .foodMenu {
     width: calc(100% - 280px);
@@ -616,7 +615,6 @@ h3 {
 }
 
 
-
 .foodInfo {
     width: 100%;
     height: 100%;
@@ -678,8 +676,6 @@ footer p {
 }
 
 
-
-
 .sectionCourtLogo {
     width: 58px;
     height: 60px;
@@ -697,7 +693,7 @@ footer p {
 
 
 .courtTitle p {
-padding-top: 8px;
+    padding-top: 8px;
 }
 
 
@@ -716,12 +712,6 @@ padding-top: 8px;
 .buttonPrice p {
     padding: 0;
 }
-
-
-/* .foodMenu {
-    padding: 12px;
-    width: 100%;
-} */
 
 
 .court {
@@ -748,33 +738,27 @@ padding-top: 8px;
     align-items: flex-start;
     flex-direction: column;
 }
-
-
-
-
-
-
 }
+
 
 /* Smartphone */
 @media (max-width: 575px) {
 .navbarHeader {
-height: 80px;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
+    height: 80px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 
 .logo2 {
-padding-left: 16px;
-width: 85px;
-height: 35px;
-/* gap: 4px; */
+    padding-left: 16px;
+    width: 85px;
+    height: 35px;
 }
 
 
 .burgerNav {
- display: none;
+    display: none;
 }
 
 
@@ -845,7 +829,6 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 
@@ -855,7 +838,6 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 
@@ -870,14 +852,8 @@ h3 {
 
 
 .sectionContentInner {
-    /* max-width: 1440px; */
-    /* margin: 0 auto; */
     padding-bottom: 60px;
-    /* box-sizing: border-box;
-    display: flex;
-    justify-content: center; */
     align-items: center;
-    /* flex-direction: column; */
 }
 
 
@@ -898,7 +874,7 @@ h3 {
 
 
 .courtTitle p {
-padding-top: 8px;
+    padding-top: 8px;
 }
 
 
@@ -923,7 +899,6 @@ padding-top: 8px;
     width: 100%;
     max-width: 375px;
     padding: 12px;
-    
 }
 
 
@@ -963,18 +938,21 @@ footer section {
     justify-content: center;
     flex-direction: column;
 }
+
+
 footer p {
     font-size: 16px;
     line-height: 1.2;
 }
 
+
 .copyright {
-height: 18px;
+    height: 18px;
 }
+
 
 .copyrightImg {
     width: 18px;
     height: 18px;
 }
 }
-

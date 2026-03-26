@@ -57,35 +57,42 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
 
 function renderBasket() {
     let refBasketMenu = '';
-    let off = document.getElementById("basketBackgroundID");
     if (basket.length === 0) {
-        document.getElementById("basketFood").classList.add("off");
         document.getElementById("basketBackgroundID").classList.remove("off");
+        document.getElementById("basketFood").classList.add("off");
         document.getElementById("basketOrdersID").classList.add("off");
-        document.getElementById('basketFood').innerHTML = '';    
+        document.getElementById('basketFood').innerHTML = '';
+        document.querySelector('.basketNavBarNumber').classList.add("off");    
     }
     else { 
         for (let basketMenuIndex = 0; basketMenuIndex < basket.length; basketMenuIndex++) {
         refBasketMenu += TemplateBasketMenu(basketMenuIndex);
         };   
-       document.getElementById("basketBackgroundID").classList.add("off");
-       document.getElementById("basketFood").classList.remove("off");
-       document.getElementById("basketOrdersID").classList.remove("off");
+        document.getElementById("basketBackgroundID").classList.add("off");
+        document.getElementById("basketFood").classList.remove("off");
+        document.getElementById("basketOrdersID").classList.remove("off");
         document.getElementById('basketFood').innerHTML = refBasketMenu;
+        document.querySelector('.basketNavBarNumber').classList.remove("off");  
     }
     calTotal();
+    basketMenuCounter();
 };
 
 
 function TemplateBasketMenu(basketMenuIndex) {
     let menuNumberCal = basket[basketMenuIndex].number;
     let newBasketMenuPrice = basket[basketMenuIndex].basketMenuPrice.replace(',','.');
-     let calculationPrice = newBasketMenuPrice * menuNumberCal;
-     calculationPrice = calculationPrice.toFixed(2).replace('.',',');
+    let returnForCategories = basket[basketMenuIndex].indexCategoriesID;
+    let returnForMenu = basket[basketMenuIndex].indexMenuID;
+    let calculationPrice = newBasketMenuPrice * menuNumberCal;
+    calculationPrice = calculationPrice.toFixed(2).replace('.',',');
         return `
         <section class="basketMenu">
             <header class="basketFoodName">
-                <p><span id="basketMenuNumber${basketMenuIndex}">${basket[basketMenuIndex].number}</span> x ${basket[basketMenuIndex].basketMenuName}</p>
+                <a href="#addBasketID${returnForCategories}-${returnForMenu}">
+                    <p><span id="basketMenuNumber${basketMenuIndex}">${basket[basketMenuIndex].number}</span> x ${basket[basketMenuIndex].basketMenuName}</p>
+                </a>
+                
             </header>
             <section class="basketFoodPrice">
                 <div class="basketButtonBar">
@@ -141,6 +148,15 @@ function calTotal() {
     document.getElementById('totalButtonID').innerText = calTotal.toFixed(2).replace('.',',');
 };
 
+
+function basketMenuCounter() {
+    let basketCounterRef = 0;
+    for (let index = 0; index < basket.length; index++) {
+        let basketCounterNumber = basket[index].number;
+        basketCounterRef += basketCounterNumber;
+    }
+    document.getElementById('basketNavBarNumberID').innerText = basketCounterRef;
+};
 
 // ==============================
 // Dialog-Ref (Modal)

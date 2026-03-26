@@ -2,8 +2,7 @@
 function init() {
     renderCategories();
     loadLocalStorage ();
-    renderBasket();
-       
+    renderBasket();     
 };
 
 
@@ -14,10 +13,8 @@ function renderCategories() {
 
 function loadLocalStorage () {
     let saveData = localStorage.getItem('basket');
-
     if (saveData) {
         basket = JSON.parse(saveData);
-
         for (let indexLS = 0; indexLS < basket.length; indexLS++) {
             let categoryIndex = basket[indexLS].indexCategoriesID;
             let menuIndex = basket[indexLS].indexMenuID;
