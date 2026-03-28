@@ -1,17 +1,18 @@
-
 // Basket close/open
 document.addEventListener('DOMContentLoaded', () => {
     let closeButton = document.getElementById('basketClose');
-    let basket = document.getElementById('BasketTemplaceID');
     let buttonOpen = document.querySelectorAll('.basketOpen');
-     function toggleBasket() {
-        basket.classList.toggle('open');
-    }
     for (let index = 0; index < buttonOpen.length; index++) {
-        buttonOpen[index].addEventListener('click', toggleBasket); 
+        buttonOpen[index].addEventListener('click', toggleBasket);
     }
     closeButton.addEventListener('click', toggleBasket);
 });
+
+
+function toggleBasket() {
+    let basket = document.getElementById('BasketTemplaceID');
+    basket.classList.toggle('open');
+}
 
 
 function addBasket(indexCategories, indexMenu, button) {
@@ -49,9 +50,9 @@ function updateBasket(basketMenuName, basketMenuPrice,indexCategories, indexMenu
     }
     else {
         item.number += 1;
-        };
-        localStorage.setItem('basket', JSON.stringify(basket));
-        renderBasket();
+    };
+    localStorage.setItem('basket', JSON.stringify(basket));
+    renderBasket();
 };
 
 
@@ -86,25 +87,7 @@ function TemplateBasketMenu(basketMenuIndex) {
     let returnForMenu = basket[basketMenuIndex].indexMenuID;
     let calculationPrice = newBasketMenuPrice * menuNumberCal;
     calculationPrice = calculationPrice.toFixed(2).replace('.',',');
-        return `
-        <section class="basketMenu">
-            <header class="basketFoodName">
-                <a href="#addBasketID${returnForCategories}-${returnForMenu}">
-                    <p><span id="basketMenuNumber${basketMenuIndex}">${basket[basketMenuIndex].number}</span> x ${basket[basketMenuIndex].basketMenuName}</p>
-                </a>
-                
-            </header>
-            <section class="basketFoodPrice">
-                <div class="basketButtonBar">
-                    <button type="button" onclick="basketDeleteMenu(${basketMenuIndex}, this)" id="basketMenuDeleteID${basketMenuIndex}"  class="moreMenu">
-                         <img src="./assets/icons/trashcan.png" alt="">
-                    </button>               
-                    <button type="button" onclick="basketAddMenu(${basketMenuIndex}, this)" id="basketMenuIndex${basketMenuIndex}"  class="moreMenu">1+</button>
-                </div>
-                <p ><span id="basketMenuPriceId${basketMenuIndex}">${calculationPrice}</span>€</p>
-            </section>
-        </section>
-    `;
+    return TemplateBasket (basketMenuIndex,returnForCategories,returnForMenu,calculationPrice);
 };
 
 
@@ -126,7 +109,7 @@ function basketDeleteMenu (basketMenuIndex) {
             button.innerText = "Add to basket";
         }  
     }
-     localStorage.setItem('basket', JSON.stringify(basket));
+    localStorage.setItem('basket', JSON.stringify(basket));
     renderBasket();  
 };
 
@@ -156,59 +139,4 @@ function basketMenuCounter() {
         basketCounterRef += basketCounterNumber;
     }
     document.getElementById('basketNavBarNumberID').innerText = basketCounterRef;
-};
-
-// ==============================
-// Dialog-Ref (Modal)
-// ==============================
-let dialogRef = document.getElementById('dialogID');   
-let dialog = document.getElementById("dialogID");     
-
-
-// ==============================
-// Open Dialog
-// ==============================
-function dialogOpen() {
-    let dialogRef = document.getElementById('dialogID');
-    let basketElement = document.getElementById('BasketTemplaceID');
-    dialogRef.showModal();
-    dialogRef.classList.add('opened');
-    basketElement.classList.remove('open');
-    for (let index = 0; index < basket.length; index++) {
-        let buttonResetCategories = basket[index].indexCategoriesID;
-        let buttonResetMenu = basket[index].indexMenuID;
-        let buttonReset = "addBasketID"+ buttonResetCategories + "-" + buttonResetMenu;
-        document.getElementById(buttonReset).innerText = "Add to basket"; 
-    }
-    basket.length = 0;
-    localStorage.clear();
-    console.log(basket);
-    renderBasket();
-    setTimeout(() => {
-        dialogClose()
-    }, 5000);  
-};
-
-
-// ==============================
-// Close Dialog
-// ==============================
-function dialogClose() {
-    let dialogRef = document.getElementById('dialogID');
-    dialogRef.close();
-    dialogRef.classList.remove('opened');
-};
-
-
-// ==============================
-// EventListener for Dialog
-// ==============================
-function setEventListener() {
-    let hero = dialog.querySelector(".heroDialog");
-    hero.addEventListener("click", function(event) {
-        event.stopPropagation();
-    });
-    dialog.addEventListener("click", function() {
-        dialog.close();
-    });
 };

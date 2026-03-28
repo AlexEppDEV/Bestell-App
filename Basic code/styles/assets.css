@@ -62,8 +62,8 @@
     bottom: 0;
     display: none;
     background-color: var(--fontColor-color);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    /* border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
 }
 
 
@@ -79,9 +79,9 @@
 .basketFoodNav img {
     width: 30px;
     height: 30px;
-   padding: 0;
-   margin: 0;
-   border: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
     cursor: pointer;
     background-color: var(--fontColor-color);
 }

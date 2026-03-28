@@ -242,6 +242,7 @@
     color: white;
     font-size: 16px;
     box-sizing: border-box;
+    font-family: var(--font-family-one);
 }
 
 
@@ -249,6 +250,7 @@ table {
     width: 100%;
     padding: 10px;
     border-collapse: collapse;
+    line-height: 1.5;
 }
 
 
@@ -264,13 +266,15 @@ tr {
 
 th {
     text-align: left;
-    padding: 5px 10px; 
+    padding-left: 10px; 
+    padding-bottom: 5px;
 }
 
 
 td {
     text-align: right;
-    padding: 5px 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
 
@@ -304,6 +308,7 @@ dialog {
     background-color: #363534;
     box-sizing: border-box;
     border-radius: 30px;
+    color: white;
 }
 
 
@@ -472,14 +477,12 @@ dialog.opened::backdrop {
     width: 100%; 
     height: 90vh; 
     gap: 8px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 0;
+    border-radius: 0;
     padding: 10px 10px;
     top: 0;
     right: 0;
     margin-top: 0;
-        position: fixed;
+    position: fixed;
 }
 
 

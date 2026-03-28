@@ -745,8 +745,8 @@ footer p {
 @media (max-width: 575px) {
 .navbarHeader {
     height: 80px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
 }
 
 
