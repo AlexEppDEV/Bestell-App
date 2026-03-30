@@ -30,12 +30,17 @@ function dialogOpen() {
     for (let index = 0; index < basket.length; index++) {
         let buttonResetCategories = basket[index].indexCategoriesID;
         let buttonResetMenu = basket[index].indexMenuID;
-        let buttonReset = "addBasketID"+ buttonResetCategories + "-" + buttonResetMenu;
-        document.getElementById(buttonReset).innerText = "Add to basket"; 
+
+        let buttonResetID = "addBasketID"+ buttonResetCategories + "-" + buttonResetMenu;
+        let buttonElement = document.getElementById(buttonResetID);
+
+        if (buttonElement) {
+            buttonElement.innerText = "Add to basket";
+            buttonElement.classList.remove('changeColor');
+        }
     }
     basket.length = 0;
     localStorage.clear();
-    console.log(basket);
     renderBasket();
     setTimeout(() => {
         dialogClose()

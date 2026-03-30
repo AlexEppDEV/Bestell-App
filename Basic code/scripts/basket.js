@@ -29,8 +29,10 @@ function changeText(basketMenuName, basketMenuPrice, button) {
         item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
     if (item && item.number > 0) { 
         button.innerText = "Added " + item.number;
+        button.classList.add('changeColor');
     } else {
         button.innerText = "Add to basket";
+        button.classList.remove('changeColor');
     }
     localStorage.setItem('basket', JSON.stringify(basket));
 };
@@ -108,6 +110,7 @@ function basketDeleteMenu (basketMenuIndex) {
         basket.splice(basketMenuIndex,1);
         if (button) {
             button.innerText = "Add to basket";
+            button.classList.remove('changeColor');
         }  
     }
     else {
@@ -153,6 +156,7 @@ function changeTextMenu(basketMenuIndex) {
     let menuNumber = basket[basketMenuIndex].number;
     if (menuNumber >= 0 ) {
         button.innerText = "Added " + menuNumber;
+        button.classList.add('changeColor');
     }
 };
 
