@@ -1,7 +1,7 @@
 function init() {
     categoriesTepmlate();
-    loadLocalStorage ();
-    renderBasket();     
+    loadLocalStorage();
+    renderBasket();       
 };
 
 
@@ -12,8 +12,9 @@ function loadLocalStorage () {
         for (let indexLS = 0; indexLS < basket.length; indexLS++) {
             let categoryIndex = basket[indexLS].indexCategoriesID;
             let menuIndex = basket[indexLS].indexMenuID;
+            let menuNumber = basket[indexLS].number;
             let button = document.getElementById(`addBasketID${categoryIndex}-${menuIndex}`);
-            button.innerText = "Added 1";
+            button.innerText = "Added "+ menuNumber;
         }
     }
 };

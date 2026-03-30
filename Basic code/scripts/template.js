@@ -48,24 +48,29 @@ function categoriesTemp(indexCategories, menuRef) {
 };
 
 
-function TemplateBasket (basketMenuIndex,returnForCategories,returnForMenu,calculationPrice) {
+// basket Template
+function TemplateBasket (basketMenuIndex,returnForCategories,returnForMenu,calculationPrice,menuNumberCal) {
+    let deleteButtonContentIcon = deleteButtonContent(menuNumberCal);
+    
      return`
         <section class="basketMenu">
             <header class="basketFoodName">
                 <a href="#addBasketID${returnForCategories}-${returnForMenu}">
-                    <p><span id="basketMenuNumber${basketMenuIndex}">${basket[basketMenuIndex].number}</span> x ${basket[basketMenuIndex].basketMenuName}</p>
-                </a>
-                
+                    <p><span id="basketMenuNumberText${basketMenuIndex}">${basket[basketMenuIndex].number}</span>
+                     x ${basket[basketMenuIndex].basketMenuName}</p>
+                </a>               
             </header>
             <section class="basketFoodPrice">
                 <div class="basketButtonBar">
-                    <button type="button" onclick="basketDeleteMenu(${basketMenuIndex}, this)" id="basketMenuDeleteID${basketMenuIndex}"  class="moreMenu">
-                         <img src="./assets/icons/trashcan.png" alt="">
-                    </button>               
-                    <button type="button" onclick="basketAddMenu(${basketMenuIndex}, this)" id="basketMenuIndex${basketMenuIndex}"  class="moreMenu">1+</button>
+                    <button type="button" onclick="basketDeleteMenu(${basketMenuIndex}, this)" 
+                    id="basketMenuDeleteID${basketMenuIndex}"  class="moreMenu">
+                        ${deleteButtonContentIcon}                           
+                    </button>
+                    <p id="basketMenuNumber${basketMenuIndex}">${menuNumberCal}</p>               
+                    <button type="button" onclick="basketAddMenu(${basketMenuIndex}, this)" 
+                    id="basketMenuIndex${basketMenuIndex}" class="moreMenu">+</button>
                 </div>
                 <p ><span id="basketMenuPriceId${basketMenuIndex}">${calculationPrice}</span>€</p>
             </section>
-        </section>
-    `;
+        </section>`;  
 };

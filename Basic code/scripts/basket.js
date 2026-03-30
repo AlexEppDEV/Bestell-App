@@ -27,12 +27,12 @@ function addBasket(indexCategories, indexMenu, button) {
 function changeText(basketMenuName, basketMenuPrice, button) {
     let item = basket.find(item =>
         item.basketMenuName === basketMenuName && item.basketMenuPrice === basketMenuPrice);
-    if (item.number > 0) { 
-        button.innerText = "Added 1";
+    if (item && item.number > 0) { 
+        button.innerText = "Added " + item.number;
     } else {
         button.innerText = "Add to basket";
     }
-    item = '';
+    localStorage.setItem('basket', JSON.stringify(basket));
 };
 
 
@@ -87,7 +87,7 @@ function TemplateBasketMenu(basketMenuIndex) {
     let returnForMenu = basket[basketMenuIndex].indexMenuID;
     let calculationPrice = newBasketMenuPrice * menuNumberCal;
     calculationPrice = calculationPrice.toFixed(2).replace('.',',');
-    return TemplateBasket (basketMenuIndex,returnForCategories,returnForMenu,calculationPrice);
+    return TemplateBasket (basketMenuIndex,returnForCategories,returnForMenu,calculationPrice,menuNumberCal);
 };
 
 
@@ -95,6 +95,7 @@ function basketAddMenu (basketMenuIndex) {
     basket[basketMenuIndex].number += 1;
     localStorage.setItem('basket', JSON.stringify(basket));
     renderBasket();
+    changeTextMenu(basketMenuIndex);
 };
 
 
@@ -109,8 +110,11 @@ function basketDeleteMenu (basketMenuIndex) {
             button.innerText = "Add to basket";
         }  
     }
+    else {
+        changeTextMenu(basketMenuIndex);
+    }
     localStorage.setItem('basket', JSON.stringify(basket));
-    renderBasket();  
+    renderBasket();
 };
 
 
@@ -139,4 +143,26 @@ function basketMenuCounter() {
         basketCounterRef += basketCounterNumber;
     }
     document.getElementById('basketNavBarNumberID').innerText = basketCounterRef;
+};
+
+
+function changeTextMenu(basketMenuIndex) {
+    let categoryIndex = basket[basketMenuIndex].indexCategoriesID;
+    let menuIndex = basket[basketMenuIndex].indexMenuID;
+    let button = document.getElementById(`addBasketID${categoryIndex}-${menuIndex}`);
+    let menuNumber = basket[basketMenuIndex].number;
+    if (menuNumber >= 0 ) {
+        button.innerText = "Added " + menuNumber;
+    }
+};
+
+
+function deleteButtonContent(menuNumberCal) {
+    let basketDeleteButtonContent = '';
+    if (menuNumberCal <= 1) {
+        basketDeleteButtonContent = `<img src="./assets/icons/trashcan.png" alt="">`;
+    } else {
+        basketDeleteButtonContent = `<span>−</span>`;
+    }
+    return basketDeleteButtonContent;
 };

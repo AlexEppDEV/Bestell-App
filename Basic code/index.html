@@ -17,134 +17,136 @@
     <script src="./script.js"></script>
 </head>
 <body onload="init()">
-    <header class="navbarHeader" id="start">      
-        <nav>
-            <img src="./assets/icons/Logo 02.png" alt="logo bestell App" class="logo2">
-            <section class="burgerNav">
-                <div class="burger-bar" id="burger-bar">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <ul class="nav-links" id="nav-links-id">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#" id="testOpen" class="basketOpen">Basket</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>    
-            </section>              
-        </nav>
-    </header>
-
-    <section class="heroTitle" >
-        <section class="headerPhoto">
-                <div class="burgerBigLogo">
-                    <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" >
-                </div>
-            </section>
-            <section class="headerTitle">
-                <div class="title">
-                    <h1><span class="titleColorOrange">Burger</span><span class="titleColorBlack">Hause</span></h1>
-                    <div class="reviews">
-                        <img src="./assets/icons/star.png" alt="Stern">
-                        <p class="reviewsRating">4,1</p>
-                        <p class="reviewsVote">(317)</p> 
+    <section class="app">
+        <header class="navbarHeader" id="start">      
+            <nav>
+                <img src="./assets/icons/Logo 02.png" alt="logo bestell App" class="logo2">
+                <section class="burgerNav">
+                    <div class="burger-bar" id="burger-bar">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
                     </div>
-                </div>
-                <p class="headerSlogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
-            </section>
-    </section>
-    
-    <main> 
-        <section id="newCategories" class="newCategories">
-            <section class="contentWrapper" id="contentWrapperID">    
-            </section>
+                    <ul class="nav-links" id="nav-links-id">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#" id="testOpen" class="basketOpen">Basket</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>    
+                </section>              
+            </nav>
+        </header>
 
-            <section id="BasketTemplaceID" class="basketLayer">
-                <section   class="basketSection">  
-                    <section class="basket" id="basket"> 
-                        <header class="basketHeader">
-                            <div class="buttonBar">
-                                <button id="basketClose" class="closeButton" tabindex="0">X</button>
-                            </div>
-                            <h2>Your Basket</h2>
-                        </header>
-                        <section class="basketContents" id="basketFood">
-                        </section>
-                        <div id="basketBackgroundID" class="basketBackground">
-                                <p>Nothing here yet. Go ahead and choose something delicious!</p>
-                                <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
+        <section class="heroTitle" >
+            <section class="headerPhoto">
+                    <div class="burgerBigLogo">
+                        <img src="./assets/icons/burger-big-logo.png" alt="saftiger Burger" >
+                    </div>
+                </section>
+                <section class="headerTitle">
+                    <div class="title">
+                        <h1><span class="titleColorOrange">Burger</span><span class="titleColorBlack">Hause</span></h1>
+                        <div class="reviews">
+                            <img src="./assets/icons/star.png" alt="Stern">
+                            <p class="reviewsRating">4,1</p>
+                            <p class="reviewsVote">(317)</p> 
                         </div>
-                        <footer class="basketFooter" id="basketOrdersID">  
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Subtotal</th>
-                                        <td > <span id="SubtotalID">0</span>€</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Delivery fee</th>
-                                        <td ><span id="DeliveryFeeID">4,99</span>€</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Total</th>
-                                        <td id="totalID"> <span id="totalID"> 0</span>€</td>
-                                    </tr>    
-                                </tfoot>                          
-                            </table>
-                            <button type="button" onclick="dialogOpen()">Buy now (<span id="totalButtonID">41,69</span>€)</button>
-                        </footer>
-                    </section>    
-                </section> 
-            </section>                                
-            </section>
+                    </div>
+                    <p class="headerSlogan">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+                </section>
+        </section>
+        
+        <main> 
+            <section id="newCategories" class="newCategories">
+                <section class="contentWrapper" id="contentWrapperID">    
+                </section>
 
-        <dialog id="dialogID">
-            <section class="heroDialog"> 
-                    <header class="dialogHeader">
-                        <button onclick="dialogClose()" class="closeButtonDialog" tabindex="0">X</button>
-                    </header>
-                    <section class="dialogContent">
-                        <img src="./assets/icons/dialogBasketPicture.png" alt="delivery van">
-                        <h3>Order confirmed!</h3>
-                        <p>Your food is on the way!</p>
-                    </section>
-            </section>
-        </dialog>
+                <section id="BasketTemplaceID" class="basketLayer">
+                    <section   class="basketSection">  
+                        <section class="basket" id="basket"> 
+                            <header class="basketHeader">
+                                <div class="buttonBar">
+                                    <button id="basketClose" class="closeButton" tabindex="0">X</button>
+                                </div>
+                                <h2>Your Basket</h2>
+                            </header>
+                            <section class="basketContents" id="basketFood">
+                            </section>
+                            <div id="basketBackgroundID" class="basketBackground">
+                                    <p>Nothing here yet. Go ahead and choose something delicious!</p>
+                                    <img src="./assets/icons/shopping_cart.png" alt="einkaufswagen">
+                            </div>
+                            <footer class="basketFooter" id="basketOrdersID">  
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>Subtotal</th>
+                                            <td > <span id="SubtotalID">0</span>€</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Delivery fee</th>
+                                            <td ><span id="DeliveryFeeID">4,99</span>€</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Total</th>
+                                            <td id="totalID"> <span id="totalID"> 0</span>€</td>
+                                        </tr>    
+                                    </tfoot>                          
+                                </table>
+                                <button type="button" onclick="dialogOpen()">Buy now (<span id="totalButtonID">41,69</span>€)</button>
+                            </footer>
+                        </section>    
+                    </section> 
+                </section>                                
+                </section>
 
-        <footer> 
-            <section>  
-                <p>Imprint</p>
-                <p>Cookie Preferences</p>
-                <div class="copyright">
-                    <img src="./assets/icons/copyright.png" alt="copyright" class="copyrightImg">
-                    <p>2025 BurgerHause</p>
+            <dialog id="dialogID">
+                <section class="heroDialog"> 
+                        <header class="dialogHeader">
+                            <button onclick="dialogClose()" class="closeButtonDialog" tabindex="0">X</button>
+                        </header>
+                        <section class="dialogContent">
+                            <img src="./assets/icons/dialogBasketPicture.png" alt="delivery van">
+                            <h3>Order confirmed!</h3>
+                            <p>Your food is on the way!</p>
+                        </section>
+                </section>
+            </dialog>
+
+            <footer> 
+                <section>  
+                    <p>Imprint</p>
+                    <p>Cookie Preferences</p>
+                    <div class="copyright">
+                        <img src="./assets/icons/copyright.png" alt="copyright" class="copyrightImg">
+                        <p>2025 BurgerHause</p>
+                    </div>    
+                </section>
+            </footer>
+        </main>
+                
+        <section class="basketFoodBar">
+        <nav class="basketFoodNav">
+            <section>
+                <a href="#start"><img src="./assets/icons/home-icon.png" alt=""></a>   
+            </section>
+            <section>
+                <img src="./assets/icons/profil-icon.png" alt="">
+            </section>
+            <section>
+                <a href="#newCategories"><img src="./assets/icons/logo-nav-bar.png" alt=""></a>   
+            </section>
+            <section id="basketNavBar"  class="basketOpen">
+                <div class="basketMenuCounter">
+                    <img src="./assets/icons/basket.png" alt="">
+                    <div class="basketNavBarNumber">
+                        <p id="basketNavBarNumberID"></p>
+                    </div>
                 </div>    
             </section>
-        </footer>
-    </main>
-            
-    <section class="basketFoodBar">
-       <nav class="basketFoodNav">
-        <section>
-            <a href="#start"><img src="./assets/icons/home-icon.png" alt=""></a>   
-        </section>
-        <section>
-            <img src="./assets/icons/profil-icon.png" alt="">
-        </section>
-        <section>
-            <a href="#newCategories"><img src="./assets/icons/logo-nav-bar.png" alt=""></a>   
-        </section>
-        <section id="basketNavBar"  class="basketOpen">
-            <div class="basketMenuCounter">
-                <img src="./assets/icons/basket.png" alt="">
-                <div class="basketNavBarNumber">
-                    <p id="basketNavBarNumberID"></p>
-                </div>
-            </div>    
-        </section>
-       </nav>
-    </section> 
+        </nav>
+        </section> 
+    </section>
 </body>
 </html>
