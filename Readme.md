@@ -13,13 +13,13 @@ Eine interaktive Web-App zum Bestellen von Gerichten mit Warenkorb, dynamischem 
 
 👉 [Projekt ansehen](#)
 
-*(hier später deinen GitHub Pages Link einfügen)*
+
 
 ---
 
 ## 📸 Screenshots
 
-*(optional – hier Bilder einfügen)*
+
 
 ---
 
@@ -74,13 +74,13 @@ Eine interaktive Web-App zum Bestellen von Gerichten mit Warenkorb, dynamischem 
 
 👉 [Projekt ansehen](#)
 
-*(hier später deinen GitHub Pages Link einfügen)*
+
 
 ---
 
 ## 📸 Screenshots
 
-*(optional – hier Bilder einfügen)*
+
 
 ---
 
